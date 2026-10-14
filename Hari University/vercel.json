@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/Hari University Home.dc.html" }
+  ],
+  "headers": [
+    { "source": "/(.*)\\.dc\\.html", "headers": [{ "key": "Content-Type", "value": "text/html; charset=utf-8" }] }
+  ]
+}
