@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/modernist-8aa8bd0d-091c-49d7-966f-09bf9aaebbbc/styles.css">
+<script src="_ds/modernist-8aa8bd0d-091c-49d7-966f-09bf9aaebbbc/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<link rel="icon" type="image/png" href="uploads/favicon.png">
+<title>About Hari University</title>
+<style>
+:root{--color-bg:#FFFFFF;--color-surface:#F2F7FF;--color-text:#172033;--color-accent:#0066FF;--color-accent-2:#00A3FF;--color-divider:#D5DEEC;--color-accent-100:#F2F7FF;--color-accent-200:#D9E8FF;--color-accent-300:#ADCCFF;--color-accent-400:#5C9DFF;--color-accent-500:#0066FF;--color-accent-600:#0052D6;--color-accent-700:#003B95;--color-accent-800:#002C70;--color-accent-900:#001D4A;--radius-sm:6px;--radius-md:8px;--radius-lg:14px;--shadow-sm:0 1px 2px rgba(0,59,149,.08);--shadow-md:0 6px 20px rgba(0,59,149,.10);--shadow-lg:0 18px 44px rgba(0,59,149,.14)}
+html{scroll-behavior:smooth}
+body{margin:0;background:#FFFFFF;color:#172033;font-family:"Archivo",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#0066FF}a:hover{color:#003B95}
+:focus-visible{outline:2px solid #0066FF;outline-offset:2px}
+</style>
+</helmet>
+<div style="min-height:100vh;background:#FFFFFF">
+<dc-import name="SiteTopbar" hint-size="100%,72px"></dc-import>
+<dc-import name="SiteHeader" current="about" hint-size="100%,77px" style="position:sticky;top:0;z-index:30"></dc-import>
+<main>
+<section style="background:#F2F7FF;border-bottom:1px solid #E3EAF5">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(32px,5vw,64px) clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(28px,4vw,56px);align-items:center">
+<div style="display:flex;flex-direction:column;gap:18px;align-items:flex-start">
+<nav aria-label="Breadcrumb" style="font-size:13px;color:#64748B;display:flex;gap:8px"><a href="Hari University Home.dc.html" style="color:#64748B;text-decoration:none">Home</a><span>/</span><span style="color:#172033;font-weight:600">About Us</span></nav>
+<h1 style="font-size:clamp(36px,4.6vw,60px);line-height:1.05;letter-spacing:-.03em;margin:0">Where consciousness meets research.</h1>
+<p style="font-size:clamp(16px,1.4vw,19px);line-height:1.6;color:#64748B;margin:0;max-width:560px">Hari University — the Heartfulness Academy of Research &amp; Innovation — is India's first greenfield, privately sponsored Deemed-to-be University, approved by the Government of India under UGC's Distinct Category.</p>
+</div>
+<div style="position:relative;height:clamp(260px,30vw,400px)"><image-slot id="about-hero" shape="rounded" radius="16" src="uploads/og-default.jpg" placeholder="About hero image"></image-slot></div>
+</div>
+</section>
+
+<section style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,48px) 0">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(28px,4vw,64px);border-top:2px solid #172033;padding-top:32px">
+<div><span style="font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#0066FF">Our philosophy</span><h2 style="font-size:clamp(28px,3.2vw,42px);margin:10px 0 0;letter-spacing:-.025em">Skills for a career matter. Skills for a life matter more.</h2></div>
+<div style="display:flex;flex-direction:column;gap:16px;font-size:16px;line-height:1.7;color:#334155">
+<p style="margin:0">Most universities teach theory first and hope it reaches the world eventually. At Hari University, we start with what the world needs and work backwards.</p>
+<p style="margin:0">Our curriculum builds on 75 years of Heartfulness practice — in farms, schools, hospitals and boardrooms across 160 countries — and every degree is earned on a living campus at Kanha Shanti Vanam, Telangana.</p>
+</div>
+</div>
+</section>
+
+<section style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,48px) 0">
+<span style="font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#0066FF">What we stand for</span>
+<h2 style="font-size:clamp(30px,3.4vw,44px);margin:10px 0 28px;letter-spacing:-.025em">Our four pillars</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px">
+<sc-for list="{{ pillars }}" as="p" hint-placeholder-count="4">
+<article style="border:1px solid #E3EAF5;border-radius:14px;overflow:hidden;background:#FFFFFF;transition:all .25s" style-hover="transform:translateY(-4px);box-shadow:0 16px 36px rgba(0,59,149,.12);border-color:#ADCCFF">
+<div style="height:180px;position:relative;overflow:hidden"><div style="position:absolute;inset:0;transition:transform .6s ease" style-hover="transform:scale(1.07)"><image-slot id="{{ p.slot }}" shape="rect" src="{{ p.img }}" placeholder="Pillar image"></image-slot></div></div>
+<div style="padding:18px 20px 22px;display:flex;flex-direction:column;gap:6px"><span style="font-size:13px;font-weight:800;color:#0066FF">{{ p.n }}</span><h3 style="font-size:19px;margin:0">{{ p.title }}</h3><p style="margin:0;font-size:14px;line-height:1.6;color:#64748B">{{ p.desc }}</p></div>
+</article>
+</sc-for>
+</div>
+</section>
+
+<section style="margin-top:clamp(56px,7vw,96px);background:#F2F7FF">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,88px) clamp(20px,4vw,48px)">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:16px 48px;align-items:end;margin-bottom:32px">
+<div><span style="font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#0066FF">Woven through every programme</span><h2 style="font-size:clamp(30px,3.4vw,44px);margin:10px 0 0;letter-spacing:-.025em">The Heartfulness Curriculum Framework</h2></div>
+<p style="margin:0;color:#64748B;font-size:16px;line-height:1.6">Consciousness-based frameworks developed over decades in schools, corporations and community programmes across India and globally.</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:1px;background:#D5DEEC;border:1px solid #D5DEEC;border-radius:14px;overflow:hidden">
+<sc-for list="{{ framework }}" as="f" hint-placeholder-count="4">
+<div style="background:#FFFFFF;padding:28px;display:flex;flex-direction:column;gap:10px"><span style="font-size:36px;font-weight:800;color:#D9E8FF;line-height:1">{{ f.n }}</span><h3 style="font-size:22px;margin:0;color:#003B95">{{ f.title }}</h3><span style="font-size:13px;font-weight:700;color:#172033">{{ f.full }}</span><p style="margin:0;font-size:14px;line-height:1.6;color:#64748B">{{ f.desc }}</p></div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section id="leadership" style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,48px) 0;scroll-margin-top:90px">
+<span style="font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#0066FF">Leadership</span>
+<h2 style="font-size:clamp(30px,3.4vw,44px);margin:10px 0 28px;letter-spacing:-.025em">Guided by purpose</h2>
+<article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));border:1px solid #E3EAF5;border-radius:16px;overflow:hidden;background:#FFFFFF;box-shadow:0 6px 20px rgba(0,59,149,.08)">
+<div style="position:relative;min-height:clamp(280px,30vw,400px);background:#F2F7FF"><image-slot id="about-vc" shape="rect" src="uploads/vice-chancellor-dr-narsi-reddy.jpg" placeholder="Vice Chancellor portrait"></image-slot></div>
+<div style="padding:clamp(28px,4vw,52px);display:flex;flex-direction:column;justify-content:center;gap:14px;border-left:4px solid #0066FF">
+<span style="font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#0066FF">Vice Chancellor</span>
+<h3 style="font-size:clamp(26px,2.8vw,36px);margin:0;letter-spacing:-.02em">Dr. Narsireddy Malgireddy</h3>
+<p style="margin:0;font-size:16px;line-height:1.65;color:#64748B">Leading Hari University's academic vision — interdisciplinary learning, research from the first semester, and education rooted in Heartfulness values.</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px;padding-top:6px"><a href="Contact.dc.html" class="btn btn-secondary" style="padding:12px 18px;border-radius:8px;border-color:#0066FF;color:#0066FF">Contact the Office</a></div>
+</div>
+</article>
+</section>
+
+<section style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,48px)">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));background:#FFFFFF;border:2px solid #0066FF;border-radius:18px;overflow:hidden">
+<div style="position:relative;min-height:300px"><image-slot id="about-campus" shape="rect" src="https://haridu.in/_next/image?url=%2Fimages%2Fds%2Fcampus-avenue-aerial.jpg&amp;w=1200&amp;q=75" placeholder="Campus image"></image-slot></div>
+<div style="padding:clamp(28px,4vw,52px);display:flex;flex-direction:column;gap:16px;align-items:flex-start">
+<span style="font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0066FF">Our home</span>
+<h2 style="font-size:clamp(28px,3vw,40px);margin:0;letter-spacing:-.025em">Kanha Shanti Vanam</h2>
+<p style="margin:0;color:#64748B;font-size:16px;line-height:1.6">A several-hundred-acre regenerated campus near Hyderabad — one of India's most significant active ecological regeneration projects, and a living laboratory for every School.</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px"><a href="CampusLife.dc.html" class="btn btn-primary" style="padding:13px 20px;border-radius:8px">Discover Our Campus</a><a href="Contact.dc.html" class="btn btn-secondary" style="padding:13px 20px;border-radius:8px;border-color:#0066FF;color:#0066FF">Plan a Visit</a></div>
+</div>
+</div>
+</section>
+</main>
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const IMG = n => `https://haridu.in/_next/image?url=%2Fimages%2Fds%2F${encodeURIComponent(n)}&w=1200&q=75`;
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      pillars: [
+        { n: '01', title: 'Ecological Stewardship', desc: 'Commitment to sustainability, regeneration and green innovation.', img: IMG('campus-avenue-aerial.jpg'), slot: 'about-p1' },
+        { n: '02', title: 'Consciousness & Inner Sciences', desc: 'Holistic human development through proven inner practices.', img: IMG('meditation-hall-aerial.jpg'), slot: 'about-p2' },
+        { n: '03', title: 'Rigorous Innovation', desc: 'Data-driven, peer-reviewed scientific research.', img: IMG('research-lab-detail.jpg'), slot: 'about-p3' },
+        { n: '04', title: 'Global Responsibility', desc: 'Community-centric, scalable impact across 160+ countries.', img: IMG('gardens-tree-avenue.jpg'), slot: 'about-p4' },
+      ],
+      framework: [
+        { n: '01', title: 'Brighter Minds', full: 'Cognitive Skill Improvement', desc: 'Harnessing neuroplasticity to develop advanced cognitive abilities, applied directly to undergraduate learning.' },
+        { n: '02', title: 'HELP', full: 'Heartfulness Experience Life Potential', desc: 'Core life skills, emotional balance and the realisation of human potential.' },
+        { n: '03', title: 'HELM', full: 'Heartfulness Enabled Leadership Mastery', desc: 'Next-generation leadership, executive clarity and decision-making from the heart.' },
+        { n: '04', title: 'HOPE', full: 'Heartfulness Odyssey for Personal Excellence', desc: 'Holistic personal growth and lifelong excellence for students and faculty.' },
+      ],
+      leaders: [
+        { role: 'Chancellor', name: 'Shri Kamlesh D. Patel (Daaji)', note: 'Global Guide of Heartfulness', img: 'uploads/management-chancellor-dummy.jpg', slot: 'about-chancellor' },
+        { role: 'Vice Chancellor', name: 'Dr. Narsireddy Malgireddy', note: 'Hari University', img: 'uploads/vice-chancellor-dr-narsi-reddy.jpg', slot: 'about-vc' },
+        { role: 'Director', name: 'Vamsi Chalagulla', note: 'Hari University', img: 'uploads/management-director-dummy.jpg', slot: 'about-director' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

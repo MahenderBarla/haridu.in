@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/modernist-8aa8bd0d-091c-49d7-966f-09bf9aaebbbc/styles.css">
+<script src="_ds/modernist-8aa8bd0d-091c-49d7-966f-09bf9aaebbbc/_ds_bundle.js"></script>
+<style>:root{--color-bg:#FFFFFF;--color-surface:#F2F7FF;--color-text:#172033;--color-accent:#0066FF;--color-accent-2:#00A3FF;--color-divider:#D5DEEC;--color-accent-100:#F2F7FF;--color-accent-200:#D9E8FF;--color-accent-300:#ADCCFF;--color-accent-400:#5C9DFF;--color-accent-500:#0066FF;--color-accent-600:#0052D6;--color-accent-700:#003B95;--color-accent-800:#002C70;--color-accent-900:#001D4A;--radius-sm:6px;--radius-md:8px;--radius-lg:14px;--shadow-sm:0 1px 2px rgba(0,59,149,.08);--shadow-md:0 6px 20px rgba(0,59,149,.10);--shadow-lg:0 18px 44px rgba(0,59,149,.14)}</style>
+</helmet>
+<div style="font-family:'Archivo',system-ui,sans-serif">
+<sc-if value="{{ showAnnouncement }}" hint-placeholder-val="{{ true }}">
+<div style="background:#0066FF;color:#FFFFFF;font-size:13px">
+<div style="max-width:1280px;margin:0 auto;padding:9px clamp(20px,4vw,48px);display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px">
+<span style="font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:11px;background:rgba(255,255,255,.18);padding:3px 8px;border-radius:4px">Admissions open</span>
+<span style="flex:1;min-width:220px">Applications for AY 2026–27 are open — B.Tech, B.Sc. (Hons), BBA and MA Philosophy.</span>
+<a href="Admissions.dc.html#apply" style="color:#FFFFFF;font-weight:600;display:flex;align-items:center;gap:6px;text-decoration:none">Apply now<svg width="14" height="14" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ showUtility }}" hint-placeholder-val="{{ true }}">
+<div style="background:#003B95;color:#D9E8FF;font-size:13px">
+<div style="max-width:1280px;margin:0 auto;padding:7px clamp(20px,4vw,48px);display:flex;align-items:center;gap:18px;white-space:nowrap">
+<a href="tel:+918143241135" style="color:#FFFFFF;text-decoration:none;display:flex;align-items:center;gap:7px"><svg width="14" height="14" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>+91 81432 41135</a>
+<a href="mailto:admissions@haridu.in" style="color:#FFFFFF;text-decoration:none;display:flex;align-items:center;gap:7px;margin-right:auto"><svg width="14" height="14" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>admissions@haridu.in</a>
+<sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}"><a href="NewsEvents.dc.html" style="color:#D9E8FF;text-decoration:none;white-space:nowrap" style-hover="color:#FFFFFF">News &amp; Events</a></sc-if>
+<sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}"><a href="About.dc.html#leadership" style="color:#D9E8FF;text-decoration:none;white-space:nowrap" style-hover="color:#FFFFFF">Leadership</a></sc-if>
+<a href="Contact.dc.html" style="color:#D9E8FF;text-decoration:none" style-hover="color:#FFFFFF">Contact Us</a>
+<a href="Contact.dc.html#enquiry" style="color:#FFFFFF;font-weight:700;text-decoration:none;padding:3px 10px;border:1px solid rgba(255,255,255,.45);border-radius:6px;white-space:nowrap" style-hover="background:rgba(255,255,255,.12)">Admission Enquiry</a>
+</div>
+</div>
+</sc-if>
+<a href="{{ waHref }}" target="_blank" rel="noopener" aria-label="Chat with Admissions on WhatsApp" style="position:fixed;right:20px;bottom:20px;z-index:60;display:flex;align-items:center;gap:10px;background:#25D366;color:#FFFFFF;text-decoration:none;border-radius:999px;padding:12px 18px 12px 14px;box-shadow:0 10px 28px rgba(0,0,0,.22);font-weight:800;font-size:14px;transition:transform .2s,box-shadow .2s" style-hover="transform:translateY(-3px) scale(1.03);box-shadow:0 16px 36px rgba(0,0,0,.28);color:#FFFFFF"><svg width="28" height="28" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path><path d="M9.5 9.5c.3 1.6 1.4 3.4 3 4.5l1.3-1.1c.3-.2.7-.2 1 0l1.3.9c.3.2.4.6.2.9-.6 1-1.7 1.4-2.8 1.1-2.9-.9-5-3.2-5.8-6-.3-1.1.2-2.2 1.2-2.8.3-.2.7-.1.9.2l.8 1.3c.2.3.2.7 0 1Z"></path></svg><span style="display:flex;flex-direction:column;line-height:1.15"><span>WhatsApp us</span><span style="font-size:11px;font-weight:600;opacity:.9">Admissions help</span></span></a>
+<a href="Contact.dc.html#enquiry" aria-label="Enquire now" style="position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:60;writing-mode:vertical-rl;background:#0066FF;color:#FFFFFF;padding:18px 11px;border-radius:10px 0 0 10px;font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;box-shadow:0 8px 24px rgba(0,59,149,.3);transition:background .2s,padding .2s" style-hover="background:#003B95;color:#FFFFFF;padding-right:16px">Enquire Now</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:90},&quot;showAnnouncement&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;whatsapp&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;918143241135&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { w: window.innerWidth };
+  componentDidMount() { this.r = () => this.setState({ w: window.innerWidth }); window.addEventListener('resize', this.r); }
+  componentWillUnmount() { window.removeEventListener('resize', this.r); }
+  renderVals() { return { showAnnouncement: this.props.showAnnouncement ?? true, showUtility: this.state.w >= 860, wide: this.state.w >= 1100, waHref: 'https://wa.me/' + (this.props.whatsapp ?? '918143241135') + '?text=' + encodeURIComponent('Hello Hari University, I would like to know more about admissions.') }; }
+}
+</script>
+</body>
+</html>

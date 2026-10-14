@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/modernist-8aa8bd0d-091c-49d7-966f-09bf9aaebbbc/styles.css">
+<script src="_ds/modernist-8aa8bd0d-091c-49d7-966f-09bf9aaebbbc/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<link rel="icon" type="image/png" href="uploads/favicon.png">
+<title>Placements &amp; Careers · Hari University</title>
+<style>
+:root{--color-bg:#FFFFFF;--color-surface:#F2F7FF;--color-text:#172033;--color-accent:#0066FF;--color-accent-2:#00A3FF;--color-divider:#D5DEEC;--color-accent-100:#F2F7FF;--color-accent-200:#D9E8FF;--color-accent-300:#ADCCFF;--color-accent-400:#5C9DFF;--color-accent-500:#0066FF;--color-accent-600:#0052D6;--color-accent-700:#003B95;--color-accent-800:#002C70;--color-accent-900:#001D4A;--radius-sm:6px;--radius-md:8px;--radius-lg:14px;--shadow-sm:0 1px 2px rgba(0,59,149,.08);--shadow-md:0 6px 20px rgba(0,59,149,.10);--shadow-lg:0 18px 44px rgba(0,59,149,.14)}
+html{scroll-behavior:smooth}
+body{margin:0;background:#FFFFFF;color:#172033;font-family:"Archivo",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#0066FF}a:hover{color:#003B95}
+:focus-visible{outline:2px solid #0066FF;outline-offset:2px}
+</style>
+</helmet>
+<div style="min-height:100vh;background:#FFFFFF">
+<dc-import name="SiteTopbar" hint-size="100%,72px"></dc-import>
+<dc-import name="SiteHeader" current="placements" hint-size="100%,77px" style="position:sticky;top:0;z-index:30"></dc-import>
+<main>
+<section style="background:#F2F7FF;border-bottom:1px solid #E3EAF5">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(32px,5vw,64px) clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(28px,4vw,56px);align-items:center">
+<div style="display:flex;flex-direction:column;gap:18px;align-items:flex-start">
+<nav aria-label="Breadcrumb" style="font-size:13px;color:#64748B;display:flex;gap:8px"><a href="Hari University Home.dc.html" style="color:#64748B;text-decoration:none">Home</a><span>/</span><span style="color:#172033;font-weight:600">Placements &amp; Careers</span></nav>
+<h1 style="font-size:clamp(36px,4.6vw,60px);line-height:1.05;letter-spacing:-.03em;margin:0">Skills for a career. Skills for a life.</h1>
+<p style="font-size:clamp(16px,1.4vw,19px);line-height:1.6;color:#64748B;margin:0;max-width:560px">Career readiness at Hari University is built into the curriculum — through live projects, research experience, ethics and leadership training.</p>
+<a href="Contact.dc.html#enquiry" class="btn btn-primary" style="padding:14px 22px;font-size:15px;border-radius:8px">Career &amp; Industry Enquiry</a>
+</div>
+<div style="position:relative;height:clamp(260px,30vw,400px)"><image-slot id="place-hero" shape="rounded" radius="16" src="https://haridu.in/_next/image?url=%2Fimages%2Fds%2F20260520_AJY_1835.JPG&amp;w=1200&amp;q=75" placeholder="Careers hero image"></image-slot></div>
+</div>
+</section>
+
+<section style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,48px) 0">
+<span style="font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#0066FF">Career development</span>
+<h2 style="font-size:clamp(30px,3.4vw,44px);margin:10px 0 28px;letter-spacing:-.025em">How we prepare you</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px">
+<sc-for list="{{ prep }}" as="p" hint-placeholder-count="6">
+<div style="padding:24px;border:1px solid #E3EAF5;border-radius:14px;display:flex;flex-direction:column;gap:10px;background:#FFFFFF" style-hover="border-color:#0066FF"><span style="font-size:13px;font-weight:800;color:#0066FF">{{ p.k }}</span><h3 style="font-size:18px;margin:0">{{ p.title }}</h3><p style="margin:0;font-size:14px;line-height:1.6;color:#64748B">{{ p.desc }}</p></div>
+</sc-for>
+</div>
+</section>
+
+<section style="margin-top:clamp(56px,7vw,96px);background:#F2F7FF">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,88px) clamp(20px,4vw,48px)">
+<span style="font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#0066FF">Career pathways</span>
+<h2 style="font-size:clamp(30px,3.4vw,44px);margin:10px 0 28px;letter-spacing:-.025em">Built on each School's focus areas</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px">
+<sc-for list="{{ paths }}" as="p" hint-placeholder-count="4">
+<div style="background:#FFFFFF;border-radius:14px;padding:24px;border-top:3px solid #0066FF;display:flex;flex-direction:column;gap:12px"><h3 style="font-size:18px;margin:0">{{ p.school }}</h3>
+<div style="display:flex;flex-wrap:wrap;gap:6px"><sc-for list="{{ p.areas }}" as="a" hint-placeholder-count="3"><span style="font-size:13px;padding:5px 10px;border-radius:999px;background:#F2F7FF;color:#003B95">{{ a }}</span></sc-for></div></div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,48px)">
+<span style="font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#0066FF">Outcomes</span>
+<h2 style="font-size:clamp(30px,3.4vw,44px);margin:10px 0 28px;letter-spacing:-.025em">Placements &amp; recruiters</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:16px;margin-bottom:20px">
+<sc-for list="{{ statSlots }}" as="s" hint-placeholder-count="4">
+<div style="padding:22px;border:1.5px dashed #ADCCFF;border-radius:14px;background:#F2F7FF;display:flex;flex-direction:column;gap:4px"><span style="font-size:28px;font-weight:800;color:#ADCCFF">—</span><span style="font-size:14px;color:#003B95;font-weight:600">{{ s }}</span></div>
+</sc-for>
+</div>
+<div style="padding:20px;border:1.5px dashed #ADCCFF;border-radius:14px;display:flex;flex-direction:column;gap:14px">
+<span style="font-size:13px;color:#003B95;font-weight:600">Placeholder — placement statistics and recruiter logos will be published once verified.</span>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px">
+<sc-for list="{{ logos }}" as="l" hint-placeholder-count="8"><span style="height:56px;border-radius:8px;background:#FFFFFF;border:1px solid #D9E8FF;display:grid;place-items:center;font-size:11px;color:#64748B">Partner logo</span></sc-for>
+</div>
+</div>
+</section>
+</main>
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      prep: [
+        { k: 'Live projects', title: 'AI-Powered Smart Farms', desc: 'Engineering and Agriculture students co-own working platforms from the ground up.' },
+        { k: 'Research', title: 'From the first semester', desc: 'Every student joins an ongoing investigation — real data, real questions.' },
+        { k: 'Leadership', title: 'HELM leadership mastery', desc: 'Executive clarity and decision-making developed alongside technical skill.' },
+        { k: 'Ethics', title: 'Code meets conscience', desc: 'Ethics is a credit-bearing core subject in every B.Tech programme.' },
+        { k: 'Industry readiness', title: 'ESG & sustainability', desc: "Strategy for a resource-constrained world, drawn from the campus's regeneration model." },
+        { k: 'Cross-disciplinary', title: 'Four Schools, one cohort', desc: 'Peers from Agriculture, Engineering, Management and Philosophy learn together.' },
+      ],
+      paths: [
+        { school: 'Agricultural Sciences', areas: ['Regenerative agriculture', 'Precision & smart farming', 'Horticulture & nurseries', 'Crop genomics'] },
+        { school: 'Engineering & Technology', areas: ['Software engineering', 'AI & machine learning', 'Data science', 'Cyber security'] },
+        { school: 'Management & Entrepreneurship', areas: ['Heartful leadership', 'ESG strategy', 'Entrepreneurship'] },
+        { school: 'Philosophy & Arts', areas: ['Ethics in technology', 'Research & teaching', 'Philosophy of consciousness'] },
+      ],
+      statSlots: ['Students placed', 'Recruiting partners', 'Internships', 'Highest package'],
+      logos: Array.from({ length: 8 }, (_, i) => i),
+    };
+  }
+}
+</script>
+</body>
+</html>

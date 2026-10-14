@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/modernist-8aa8bd0d-091c-49d7-966f-09bf9aaebbbc/styles.css">
+<script src="_ds/modernist-8aa8bd0d-091c-49d7-966f-09bf9aaebbbc/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<link rel="icon" type="image/png" href="uploads/favicon.png">
+<title>Admissions · Hari University</title>
+<style>
+:root{--color-bg:#FFFFFF;--color-surface:#F2F7FF;--color-text:#172033;--color-accent:#0066FF;--color-accent-2:#00A3FF;--color-divider:#D5DEEC;--color-accent-100:#F2F7FF;--color-accent-200:#D9E8FF;--color-accent-300:#ADCCFF;--color-accent-400:#5C9DFF;--color-accent-500:#0066FF;--color-accent-600:#0052D6;--color-accent-700:#003B95;--color-accent-800:#002C70;--color-accent-900:#001D4A;--radius-sm:6px;--radius-md:8px;--radius-lg:14px;--shadow-sm:0 1px 2px rgba(0,59,149,.08);--shadow-md:0 6px 20px rgba(0,59,149,.10);--shadow-lg:0 18px 44px rgba(0,59,149,.14)}
+html{scroll-behavior:smooth}
+body{margin:0;background:#FFFFFF;color:#172033;font-family:"Archivo",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#0066FF}a:hover{color:#003B95}
+:focus-visible{outline:2px solid #0066FF;outline-offset:2px}
+</style>
+</helmet>
+<div style="min-height:100vh;background:#FFFFFF">
+<dc-import name="SiteTopbar" hint-size="100%,72px"></dc-import>
+<dc-import name="SiteHeader" current="admissions" hint-size="100%,77px" style="position:sticky;top:0;z-index:30"></dc-import>
+<main>
+<section style="background:#F2F7FF;border-bottom:1px solid #E3EAF5">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(32px,5vw,64px) clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(28px,4vw,56px);align-items:center">
+<div style="display:flex;flex-direction:column;gap:18px;align-items:flex-start">
+<nav aria-label="Breadcrumb" style="font-size:13px;color:#64748B;display:flex;gap:8px"><a href="Hari University Home.dc.html" style="color:#64748B;text-decoration:none">Home</a><span>/</span><span style="color:#172033;font-weight:600">Admissions</span></nav>
+<span style="font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#FFFFFF;background:#0066FF;padding:6px 10px;border-radius:6px">Admissions open · AY 2026–27</span>
+<h1 style="font-size:clamp(36px,4.6vw,60px);line-height:1.05;letter-spacing:-.03em;margin:0">Your Journey Starts Here</h1>
+<p style="font-size:clamp(16px,1.4vw,19px);line-height:1.6;color:#64748B;margin:0;max-width:560px">Take the next step toward your academic and professional future — eight fully residential programmes across four Schools.</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px"><a href="#apply" class="btn btn-primary" style="padding:14px 22px;font-size:15px;border-radius:8px">Start Application</a><a href="Contact.dc.html#enquiry" class="btn btn-secondary" style="padding:14px 22px;font-size:15px;border-radius:8px;border-color:#0066FF;color:#0066FF;background:#FFFFFF">Admission Enquiry</a></div>
+</div>
+<div style="position:relative;height:clamp(260px,30vw,400px)"><image-slot id="adm-hero" shape="rounded" radius="16" src="https://haridu.in/_next/image?url=%2Fimages%2Fds%2F20220811_ADV_9021.jpg&amp;w=1200&amp;q=75" placeholder="Admissions hero image"></image-slot></div>
+</div>
+</section>
+
+<section style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,48px) 0">
+<span style="font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#0066FF">Programmes open</span>
+<h2 style="font-size:clamp(30px,3.4vw,44px);margin:10px 0 28px;letter-spacing:-.025em">Choose your programme</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:16px">
+<sc-for list="{{ programs }}" as="p" hint-placeholder-count="8">
+<div style="border:1px solid #E3EAF5;border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:6px;background:#FFFFFF" style-hover="border-color:#0066FF">
+<span style="font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0066FF">{{ p.school }}</span>
+<span style="font-size:17px;font-weight:800">{{ p.name }}</span>
+<span style="font-size:13px;color:#64748B">{{ p.dur }} · Fully residential</span>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,48px) 0">
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:12px;margin-bottom:28px">
+<div><span style="font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#0066FF">How to apply</span><h2 style="font-size:clamp(30px,3.4vw,44px);margin:10px 0 0;letter-spacing:-.025em">Four simple steps</h2></div>
+<span style="font-size:12px;font-weight:700;color:#003B95;border:1px dashed #5C9DFF;padding:4px 10px;border-radius:4px">Indicative process — to be confirmed by Admissions</span>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));border-top:2px solid #172033">
+<sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+<div style="padding:24px 24px 0 0;display:flex;flex-direction:column;gap:10px"><span style="width:44px;height:44px;border-radius:50%;background:#0066FF;color:#FFFFFF;display:grid;place-items:center;font-weight:800;font-size:16px">{{ s.n }}</span><h3 style="font-size:19px;margin:0">{{ s.title }}</h3><p style="margin:0;font-size:14px;line-height:1.6;color:#64748B">{{ s.desc }}</p></div>
+</sc-for>
+</div>
+</section>
+
+<section style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,48px) 0">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));background:#003B95;border-radius:18px;overflow:hidden;color:#FFFFFF">
+<div style="padding:clamp(28px,4vw,52px);display:flex;flex-direction:column;gap:16px;align-items:flex-start">
+<span style="font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#ADCCFF">Merit recognition</span>
+<h2 style="font-size:clamp(28px,3vw,40px);margin:0;letter-spacing:-.025em;color:#FFFFFF">HARI Udaan — AP Merit Excellence Awards</h2>
+<p style="margin:0;font-size:16px;line-height:1.6;color:#D9E8FF">Recognising Andhra Pradesh's brightest Intermediate achievers. Awardees receive medals, a Certificate of Excellence, stage felicitation and special scholarship consideration.</p>
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;width:100%">
+<div style="background:rgba(255,255,255,.1);border-radius:10px;padding:14px"><div style="font-weight:800">Gold</div><div style="font-size:13px;color:#D9E8FF">95–100%</div></div>
+<div style="background:rgba(255,255,255,.1);border-radius:10px;padding:14px"><div style="font-weight:800">Silver</div><div style="font-size:13px;color:#D9E8FF">90–94.99%</div></div>
+<div style="background:rgba(255,255,255,.1);border-radius:10px;padding:14px"><div style="font-weight:800">Bronze</div><div style="font-size:13px;color:#D9E8FF">85–89.99%</div></div>
+</div>
+<a href="NewsEvents.dc.html" class="btn" style="padding:13px 20px;border-radius:8px;background:#FFFFFF;color:#003B95" style-hover="background:#F2F7FF">See HARI Udaan events</a>
+</div>
+<div style="position:relative;min-height:340px;background:#F2F7FF"><img src="uploads/hari-udaan-vijayawada-awards.png" alt="HARI Udaan 2026 awards poster" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top"></div>
+</div>
+</section>
+
+<section id="apply" style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,48px);scroll-margin-top:90px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:clamp(28px,4vw,56px);border-top:2px solid #172033;padding-top:36px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<span style="font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#0066FF">Apply now</span>
+<h2 style="font-size:clamp(30px,3.4vw,44px);margin:0;letter-spacing:-.025em">Application form</h2>
+<p style="margin:0;color:#64748B;font-size:16px;line-height:1.6">Share your details and the Admissions team will guide you through the next steps.</p>
+<div style="background:#F2F7FF;border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:8px;font-size:14px"><strong>Need help?</strong><a href="mailto:admissions@haridu.in">admissions@haridu.in</a><span><a href="tel:+918143241135">+91 81432 41135</a> · <a href="tel:+916309997464">+91 63099 97464</a></span></div>
+</div>
+<div style="background:#F2F7FF;border-radius:16px;padding:clamp(22px,3vw,36px)">
+<sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+<div role="status" style="display:flex;flex-direction:column;gap:14px;align-items:flex-start;padding:20px 0">
+<span style="width:52px;height:52px;border-radius:50%;background:#0066FF;color:#FFFFFF;display:grid;place-items:center"><svg width="26" height="26" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"><path d="M20 6 9 17l-5-5"></path></svg></span>
+<h3 style="font-size:24px;margin:0">Application received, {{ sentName }}.</h3>
+<p style="margin:0;color:#64748B;font-size:15px;line-height:1.6">Your interest in {{ sentProgram }} has been recorded. Prototype only — this form is not yet connected to a server.</p>
+<button type="button" onClick="{{ reset }}" class="btn btn-secondary" style="border-radius:8px;border-color:#0066FF;color:#0066FF;padding:11px 18px">Start another application</button>
+</div>
+</sc-if>
+<sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+<form noValidate onSubmit="{{ submit }}" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:16px">
+<div class="field"><label for="a-name" style="font-size:13px;font-weight:600;color:#172033">Full name *</label><input id="a-name" name="name" class="input" autocomplete="name" style="background:#FFFFFF;min-height:46px;border-radius:8px;font-size:15px"><sc-if value="{{ errName }}" hint-placeholder-val="{{ false }}"><span role="alert" style="display:block;font-size:12px;color:#C62828;margin-top:5px">{{ errName }}</span></sc-if></div>
+<div class="field"><label for="a-email" style="font-size:13px;font-weight:600;color:#172033">Email *</label><input id="a-email" name="email" type="email" class="input" autocomplete="email" style="background:#FFFFFF;min-height:46px;border-radius:8px;font-size:15px"><sc-if value="{{ errEmail }}" hint-placeholder-val="{{ false }}"><span role="alert" style="display:block;font-size:12px;color:#C62828;margin-top:5px">{{ errEmail }}</span></sc-if></div>
+<div class="field"><label for="a-phone" style="font-size:13px;font-weight:600;color:#172033">Phone *</label><input id="a-phone" name="phone" type="tel" class="input" placeholder="+91" autocomplete="tel" style="background:#FFFFFF;min-height:46px;border-radius:8px;font-size:15px"><sc-if value="{{ errPhone }}" hint-placeholder-val="{{ false }}"><span role="alert" style="display:block;font-size:12px;color:#C62828;margin-top:5px">{{ errPhone }}</span></sc-if></div>
+<div class="field"><label for="a-prog" style="font-size:13px;font-weight:600;color:#172033">Programme *</label><select id="a-prog" name="program" class="input" style="background:#FFFFFF;min-height:46px;border-radius:8px;font-size:15px"><option value="">Select a programme</option><sc-for list="{{ programs }}" as="o" hint-placeholder-count="8"><option value="{{ o.name }}">{{ o.name }}</option></sc-for></select><sc-if value="{{ errProgram }}" hint-placeholder-val="{{ false }}"><span role="alert" style="display:block;font-size:12px;color:#C62828;margin-top:5px">{{ errProgram }}</span></sc-if></div>
+<div class="field"><label for="a-city" style="font-size:13px;font-weight:600;color:#172033">City / State</label><input id="a-city" name="city" class="input" style="background:#FFFFFF;min-height:46px;border-radius:8px;font-size:15px"></div>
+<div class="field"><label for="a-score" style="font-size:13px;font-weight:600;color:#172033">Qualifying exam score (%)</label><input id="a-score" name="score" inputMode="decimal" class="input" style="background:#FFFFFF;min-height:46px;border-radius:8px;font-size:15px"></div>
+<label style="grid-column:1/-1;display:flex;gap:10px;align-items:flex-start;font-size:14px;cursor:pointer"><input type="checkbox" name="consent" style="width:18px;height:18px;margin-top:2px;accent-color:#0066FF">I agree to be contacted by Hari University Admissions about my application.</label>
+<sc-if value="{{ errConsent }}" hint-placeholder-val="{{ false }}"><span role="alert" style="grid-column:1/-1;font-size:12px;color:#C62828">{{ errConsent }}</span></sc-if>
+<div style="grid-column:1/-1"><button type="submit" class="btn btn-primary" style="padding:14px 24px;font-size:15px;border-radius:8px">Submit application</button></div>
+</form>
+</sc-if>
+</div>
+</div>
+</section>
+</main>
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const PROGRAMS = [
+  ['Agricultural Sciences', 'B.Sc. (Hons) Agriculture', '4 years'], ['Agricultural Sciences', 'B.Sc. (Hons) Horticulture', '4 years'],
+  ['Engineering & Technology', 'B.Tech Computer Science', '4 years'], ['Engineering & Technology', 'B.Tech CS (Artificial Intelligence)', '4 years'],
+  ['Engineering & Technology', 'B.Tech CS (Data Science)', '4 years'], ['Engineering & Technology', 'B.Tech CS (Cyber Security)', '4 years'],
+  ['Management & Entrepreneurship', 'BBA in Management', '3 years'], ['Philosophy & Arts', 'MA Philosophy', '2 years'],
+].map(([school, name, dur]) => ({ school, name, dur }));
+class Component extends DCLogic {
+  state = { errors: {}, sent: null };
+  submit = (e) => {
+    e.preventDefault();
+    const fd = new FormData(e.target); const d = Object.fromEntries(fd.entries()); const er = {};
+    if (!d.name || d.name.trim().length < 2) er.name = 'Please enter your full name.';
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email || '')) er.email = 'Please enter a valid email address.';
+    if ((d.phone || '').replace(/\D/g, '').length < 10) er.phone = 'Please enter a valid phone number (10+ digits).';
+    if (!d.program) er.program = 'Please choose a programme.';
+    if (!fd.get('consent')) er.consent = 'Please confirm we may contact you.';
+    if (Object.keys(er).length) { this.setState({ errors: er }); return; }
+    this.setState({ errors: {}, sent: { name: d.name.trim().split(' ')[0], program: d.program } });
+  };
+  renderVals() {
+    const { errors: er, sent } = this.state;
+    return {
+      programs: PROGRAMS,
+      steps: [
+        { n: '1', title: 'Explore & enquire', desc: 'Browse programmes and reach out to Admissions with your questions.' },
+        { n: '2', title: 'Submit application', desc: 'Complete the application form with your academic details.' },
+        { n: '3', title: 'Review & interaction', desc: 'The Admissions team reviews your application and connects with you.' },
+        { n: '4', title: 'Confirm admission', desc: 'Accept your offer and prepare for life on campus.' },
+      ],
+      submit: this.submit, reset: () => this.setState({ sent: null }),
+      errName: er.name || '', errEmail: er.email || '', errPhone: er.phone || '', errProgram: er.program || '', errConsent: er.consent || '',
+      sent: !!sent, notSent: !sent, sentName: sent ? sent.name : '', sentProgram: sent ? sent.program : '',
+    };
+  }
+}
+</script>
+</body>
+</html>

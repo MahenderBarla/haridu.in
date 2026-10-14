@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/modernist-8aa8bd0d-091c-49d7-966f-09bf9aaebbbc/styles.css">
+<script src="_ds/modernist-8aa8bd0d-091c-49d7-966f-09bf9aaebbbc/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<link rel="icon" type="image/png" href="uploads/favicon.png">
+<title>Research &amp; Innovation · Hari University</title>
+<style>
+:root{--color-bg:#FFFFFF;--color-surface:#F2F7FF;--color-text:#172033;--color-accent:#0066FF;--color-accent-2:#00A3FF;--color-divider:#D5DEEC;--color-accent-100:#F2F7FF;--color-accent-200:#D9E8FF;--color-accent-300:#ADCCFF;--color-accent-400:#5C9DFF;--color-accent-500:#0066FF;--color-accent-600:#0052D6;--color-accent-700:#003B95;--color-accent-800:#002C70;--color-accent-900:#001D4A;--radius-sm:6px;--radius-md:8px;--radius-lg:14px;--shadow-sm:0 1px 2px rgba(0,59,149,.08);--shadow-md:0 6px 20px rgba(0,59,149,.10);--shadow-lg:0 18px 44px rgba(0,59,149,.14)}
+html{scroll-behavior:smooth}
+body{margin:0;background:#FFFFFF;color:#172033;font-family:"Archivo",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#0066FF}a:hover{color:#003B95}
+:focus-visible{outline:2px solid #0066FF;outline-offset:2px}
+</style>
+</helmet>
+<div style="min-height:100vh;background:#FFFFFF">
+<dc-import name="SiteTopbar" hint-size="100%,72px"></dc-import>
+<dc-import name="SiteHeader" current="research" hint-size="100%,77px" style="position:sticky;top:0;z-index:30"></dc-import>
+<main>
+<section style="background:#F2F7FF;border-bottom:1px solid #E3EAF5">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(32px,5vw,64px) clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(28px,4vw,56px);align-items:center">
+<div style="display:flex;flex-direction:column;gap:18px;align-items:flex-start">
+<nav aria-label="Breadcrumb" style="font-size:13px;color:#64748B;display:flex;gap:8px"><a href="Hari University Home.dc.html" style="color:#64748B;text-decoration:none">Home</a><span>/</span><span style="color:#172033;font-weight:600">Research</span></nav>
+<h1 style="font-size:clamp(36px,4.6vw,60px);line-height:1.05;letter-spacing:-.03em;margin:0">From practice to proof.</h1>
+<p style="font-size:clamp(16px,1.4vw,19px);line-height:1.6;color:#64748B;margin:0;max-width:560px">Our research centres turn seventy-five years of Heartfulness practice into rigorous, evidence-led inquiry — and every student joins an investigation from their first semester.</p>
+</div>
+<div style="position:relative;height:clamp(260px,30vw,400px)"><image-slot id="res-hero" shape="rounded" radius="16" src="https://haridu.in/_next/image?url=%2Fimages%2Fds%2Fresearch-growth-chamber.jpg&amp;w=1200&amp;q=75" placeholder="Research hero image"></image-slot></div>
+</div>
+</section>
+
+<section style="max-width:1280px;margin:0 auto;padding:clamp(40px,5vw,64px) clamp(20px,4vw,48px) 0">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));border-top:2px solid #172033;border-bottom:1px solid #D5DEEC">
+<div style="padding:20px 20px 20px 0"><div style="font-size:32px;font-weight:800;color:#0066FF">4</div><div style="font-size:14px;color:#64748B">Research centres</div></div>
+<div style="padding:20px 20px 20px 0"><div style="font-size:32px;font-weight:800;color:#0066FF">75 yrs</div><div style="font-size:14px;color:#64748B">Of proven practice</div></div>
+<div style="padding:20px 20px 20px 0"><div style="font-size:32px;font-weight:800;color:#0066FF">160+</div><div style="font-size:14px;color:#64748B">Countries reached</div></div>
+</div>
+</section>
+
+<section style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,48px) 0">
+<span style="font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#0066FF">Our research centres</span>
+<h2 style="font-size:clamp(30px,3.4vw,44px);margin:10px 0 32px;letter-spacing:-.025em">Four centres, one living campus</h2>
+<div style="display:flex;flex-direction:column;gap:28px">
+<sc-for list="{{ centres }}" as="c" hint-placeholder-count="4">
+<article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));border:1px solid #E3EAF5;border-radius:16px;overflow:hidden;background:#FFFFFF">
+<div style="position:relative;min-height:280px"><image-slot id="{{ c.slot }}" shape="rect" src="{{ c.img }}" placeholder="Centre image"></image-slot></div>
+<div style="padding:clamp(22px,3vw,36px);display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;gap:10px;align-items:center"><span style="font-size:14px;font-weight:800;color:#0066FF">{{ c.n }}</span><span style="font-size:12px;font-weight:700;color:#003B95;background:#F2F7FF;padding:3px 8px;border-radius:4px">{{ c.tag }}</span></div>
+<h3 style="font-size:clamp(22px,2.4vw,28px);margin:0">{{ c.title }}</h3>
+<p style="margin:0;font-size:15px;line-height:1.6;color:#64748B">{{ c.desc }}</p>
+<ul style="margin:6px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px">
+<sc-for list="{{ c.items }}" as="i" hint-placeholder-count="4"><li style="display:flex;gap:8px;font-size:14px;line-height:1.5;padding-bottom:8px;border-bottom:1px solid #EEF2F8"><svg width="16" height="16" viewBox="0 0 24 24" style="fill:none;stroke:#0066FF;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;flex:none;margin-top:2px"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>{{ i }}</li></sc-for>
+</ul>
+</div>
+</article>
+</sc-for>
+</div>
+</section>
+
+<section style="margin-top:clamp(56px,7vw,96px);background:#F2F7FF">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,88px) clamp(20px,4vw,48px)">
+<span style="font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#0066FF">Interdisciplinary platforms</span>
+<h2 style="font-size:clamp(30px,3.4vw,44px);margin:10px 0 28px;letter-spacing:-.025em">Where the research happens</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px">
+<sc-for list="{{ platforms }}" as="p" hint-placeholder-count="4">
+<div style="background:#FFFFFF;border-radius:14px;overflow:hidden"><div style="height:170px;position:relative;overflow:hidden"><div style="position:absolute;inset:0;transition:transform .6s ease" style-hover="transform:scale(1.07)"><image-slot id="{{ p.slot }}" shape="rect" src="{{ p.img }}" placeholder="Platform image"></image-slot></div></div><div style="padding:18px 20px 22px;display:flex;flex-direction:column;gap:6px"><h3 style="font-size:18px;margin:0">{{ p.title }}</h3><p style="margin:0;font-size:14px;line-height:1.6;color:#64748B">{{ p.desc }}</p></div></div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,48px) 0">
+<span style="font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#0066FF">Selected publications</span>
+<h2 style="font-size:clamp(30px,3.4vw,44px);margin:10px 0 24px;letter-spacing:-.025em">Peer-reviewed research</h2>
+<div style="border-top:2px solid #172033">
+<sc-for list="{{ pubs }}" as="p" hint-placeholder-count="3">
+<a href="{{ p.href }}" target="_blank" rel="noopener" style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:center;padding:22px 0;border-bottom:1px solid #D5DEEC;text-decoration:none;color:#172033" style-hover="color:#0066FF">
+<span style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:700;color:#003B95;text-transform:uppercase;letter-spacing:.06em">{{ p.type }}</span><span style="font-size:clamp(17px,1.6vw,20px);font-weight:800;line-height:1.3">{{ p.title }}</span><span style="font-size:14px;color:#64748B">{{ p.journal }}</span></span>
+<svg width="22" height="22" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
+</a>
+</sc-for>
+</div>
+</section>
+
+<section style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,48px)">
+<div style="background:#0066FF;border-radius:18px;padding:clamp(28px,4vw,56px);color:#FFFFFF;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:24px;align-items:center">
+<div><h2 style="font-size:clamp(28px,3vw,40px);margin:0 0 10px;letter-spacing:-.025em;color:#FFFFFF">Partner with us on the science of well-being</h2><p style="margin:0;font-size:16px;line-height:1.6;color:#FFFFFF">Collaborate with our research centres, propose a study, or explore evidence-led programmes.</p></div>
+<div style="display:flex;flex-wrap:wrap;gap:12px"><a href="Contact.dc.html#enquiry" class="btn" style="padding:14px 22px;border-radius:8px;background:#FFFFFF;color:#003B95" style-hover="background:#F2F7FF">Begin your enquiry</a><a href="Academics.dc.html" class="btn" style="padding:14px 22px;border-radius:8px;border:1px solid #FFFFFF;color:#FFFFFF" style-hover="background:rgba(255,255,255,.12)">Explore Programmes</a></div>
+</div>
+</section>
+</main>
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const IMG = n => `https://haridu.in/_next/image?url=%2Fimages%2Fds%2F${encodeURIComponent(n)}&w=1200&q=75`;
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      centres: [
+        { n: '01', tag: '6 active programmes', title: 'Centre for Consciousness & Inner Sciences', img: IMG('gardens-meditation-grove.jpg'), desc: 'The neuroscience, physiology and psychology of meditation and inner development, studied through rigorous empirical methods.',
+          items: ['Heartfulness meditation and telomere length', 'Neuroplasticity across meditation experience levels', 'Stress reduction in healthcare professionals', 'ML classification of brain states using EEG and fMRI'] },
+        { n: '02', tag: '6 programmes · 6 facilities', title: 'Centre for Regenerative Agriculture', img: IMG('campus-gardens-aerial.jpg'), desc: 'The science of ecological restoration — from soil-microbiome recovery to precision water management at scale.',
+          items: ['Biochar for carbon sequestration and soil fertility', 'Drought-resistant crop genomics', 'AI and IoT in precision farming', 'Rainwater harvesting and conservation modelling'] },
+        { n: '03', tag: '4 active programmes', title: 'Heartfulness Innovation Lab', img: IMG('research-lab-detail.jpg'), desc: 'AI, plant sciences and nature–human interaction — technology applied to questions that matter for the future of life.',
+          items: ['Tree Rhythms Project: electrical signals in plants', 'AI for biodiversity monitoring', 'Nature immersion and cognitive health', 'AI-driven curriculum personalisation'] },
+        { n: '04', tag: '54,680 sq ft facility', title: 'Centre for Human Performance', img: IMG('20230703_VIK_2453.JPG'), desc: 'Elite sports science combined with holistic wellness research, in a facility built for athletics and academic enquiry.',
+          items: ['Heartfulness-enhanced athletic training', 'Biometric monitoring of athlete well-being', 'Breathwork and physiological conditioning protocols', 'Youth sports and cognitive performance'] },
+      ].map((c, i) => ({ ...c, slot: 'res-c' + i })),
+      platforms: [
+        { title: 'AI-Powered Smart Farms', desc: 'Agriculture–engineering platforms where students build and study working farms.', img: IMG('gardens-tree-avenue.jpg') },
+        { title: 'Heartfulness Innovation Lab', desc: 'Home to the Tree Rhythms Project, measuring electrical signals in living plants.', img: IMG('20260520_AJY_1775.JPG') },
+        { title: 'Biochar Centre & Grafting Institute', desc: 'Carbon-sequestration science, soil restoration and tissue-culture labs.', img: IMG('research-tissue-culture.jpg') },
+        { title: 'The Living Campus', desc: 'A regenerated ecosystem wired with IoT sensors — a continuous ecological dataset.', img: IMG('meditation-hall-aerial.jpg') },
+      ].map((p, i) => ({ ...p, slot: 'res-p' + i })),
+      pubs: [
+        { type: 'Cross-sectional EEG', title: 'Neural Dynamics of Heartfulness Meditation: EEG Alpha Modulation Across Experience Levels', journal: 'Annals of Neurosciences · 2026', href: 'https://doi.org/10.1177/09727531251400095' },
+        { type: 'Field documentation', title: 'The keystone species: conservation of Ficus (Fig) species at Kanha Shanti Vanam', journal: 'Phytology · 2026', href: 'https://doi.org/10.64171/IJPR.2026.6.1.5-9' },
+        { type: 'RCT', title: 'Effect of Heartfulness Meditation on Stress Biomarkers, Burnout and Well-Being: A Randomized Controlled Study', journal: 'Stress and Health · 2025', href: 'https://doi.org/10.1002/smi.70034' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

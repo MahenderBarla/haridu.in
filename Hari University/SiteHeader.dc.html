@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/modernist-8aa8bd0d-091c-49d7-966f-09bf9aaebbbc/styles.css">
+<script src="_ds/modernist-8aa8bd0d-091c-49d7-966f-09bf9aaebbbc/_ds_bundle.js"></script>
+<style>:root{--color-bg:#FFFFFF;--color-surface:#F2F7FF;--color-text:#172033;--color-accent:#0066FF;--color-accent-2:#00A3FF;--color-divider:#D5DEEC;--color-accent-100:#F2F7FF;--color-accent-200:#D9E8FF;--color-accent-300:#ADCCFF;--color-accent-400:#5C9DFF;--color-accent-500:#0066FF;--color-accent-600:#0052D6;--color-accent-700:#003B95;--color-accent-800:#002C70;--color-accent-900:#001D4A;--radius-sm:6px;--radius-md:8px;--radius-lg:14px;--shadow-sm:0 1px 2px rgba(0,59,149,.08);--shadow-md:0 6px 20px rgba(0,59,149,.10);--shadow-lg:0 18px 44px rgba(0,59,149,.14)}</style>
+</helmet>
+<header style="background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-bottom:1px solid #E3EAF5;box-shadow:0 4px 16px rgba(0,59,149,.06);font-family:'Archivo',system-ui,sans-serif">
+<div style="max-width:1280px;margin:0 auto;padding:12px clamp(20px,4vw,48px);display:flex;align-items:center;gap:22px">
+<a href="Hari University Home.dc.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:#172033;margin-right:auto;flex:none">
+<img src="uploads/logo-seal.png" alt="Hari University seal" style="width:52px;height:52px;object-fit:contain">
+<span style="display:flex;flex-direction:column;line-height:1.1;padding-left:12px;border-left:1px solid #D5DEEC">
+<span style="font-weight:800;font-size:20px;letter-spacing:-.01em;color:#003B95">HARI University</span>
+<span style="font-size:11px;color:#64748B;letter-spacing:.04em;text-transform:uppercase;margin-top:3px">Deemed-to-be University</span>
+</span>
+</a>
+<sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+<nav aria-label="Primary" style="display:flex;align-items:center;gap:4px;font-size:14px">
+<sc-for list="{{ links }}" as="l" hint-placeholder-count="7">
+<a href="{{ l.href }}" aria-current="{{ l.current }}" style="color:{{ l.fg }};background:{{ l.bg }};text-decoration:none;font-weight:600;padding:8px 10px;border-radius:6px;white-space:nowrap" style-hover="color:#0066FF;background:#F2F7FF">{{ l.label }}</a>
+</sc-for>
+</nav>
+</sc-if>
+<a href="Admissions.dc.html#apply" class="btn btn-primary" style="padding:11px 18px;font-size:14px;border-radius:8px;gap:8px;flex:none;white-space:nowrap">Apply Now<svg width="16" height="16" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+<sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+<button type="button" aria-label="{{ menuLabel }}" aria-expanded="{{ menuOpen }}" onClick="{{ toggleMenu }}" style="width:44px;height:44px;flex:none;display:grid;place-items:center;border:1px solid #D5DEEC;border-radius:8px;background:#FFFFFF;color:#172033;cursor:pointer" style-hover="background:#F2F7FF">
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}"><svg width="20" height="20" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></sc-if>
+<sc-if value="{{ menuClosed }}" hint-placeholder-val="{{ true }}"><svg width="20" height="20" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round"><path d="M4 6h16"></path><path d="M4 12h16"></path><path d="M4 18h16"></path></svg></sc-if>
+</button>
+</sc-if>
+</div>
+<sc-if value="{{ showMobileMenu }}" hint-placeholder-val="{{ false }}">
+<nav aria-label="Mobile" style="border-top:1px solid #E3EAF5;background:#FFFFFF;padding:8px clamp(20px,4vw,48px) 20px;display:flex;flex-direction:column;max-height:75vh;overflow:auto">
+<sc-for list="{{ mobileLinks }}" as="l" hint-placeholder-count="9">
+<a href="{{ l.href }}" aria-current="{{ l.current }}" style="color:{{ l.fg }};text-decoration:none;font-weight:600;font-size:16px;padding:14px 0;border-bottom:1px solid #EEF2F8" style-hover="color:#0066FF">{{ l.label }}</a>
+</sc-for>
+<a href="tel:+918143241135" style="padding-top:16px;font-size:14px">+91 81432 41135</a>
+<a href="mailto:admissions@haridu.in" style="padding-top:6px;font-size:14px">admissions@haridu.in</a>
+</nav>
+</sc-if>
+</header>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:80},&quot;current&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;about&quot;,&quot;academics&quot;,&quot;admissions&quot;,&quot;research&quot;,&quot;campus&quot;,&quot;placements&quot;,&quot;news&quot;,&quot;contact&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+const NAV = [
+  ['home', 'Home', 'Hari University Home.dc.html'], ['about', 'About Us', 'About.dc.html'], ['academics', 'Academics', 'Academics.dc.html'],
+  ['admissions', 'Admissions', 'Admissions.dc.html'], ['research', 'Research', 'Research.dc.html'], ['campus', 'Campus Life', 'CampusLife.dc.html'],
+  ['placements', 'Placements', 'Placements.dc.html'], ['news', 'News & Events', 'NewsEvents.dc.html'], ['contact', 'Contact Us', 'Contact.dc.html'],
+];
+class Component extends DCLogic {
+  state = { w: window.innerWidth, menuOpen: false };
+  componentDidMount() { this.r = () => this.setState(s => ({ w: window.innerWidth, menuOpen: window.innerWidth < 1040 && s.menuOpen })); window.addEventListener('resize', this.r); }
+  componentWillUnmount() { window.removeEventListener('resize', this.r); }
+  renderVals() {
+    const cur = this.props.current ?? 'home';
+    const isMobile = this.state.w < 1040, open = this.state.menuOpen;
+    const map = ([key, label, href]) => { const a = key === cur; return { label, href, current: a ? 'page' : undefined, fg: a ? '#0066FF' : '#172033', bg: a ? '#F2F7FF' : 'transparent' }; };
+    return {
+      links: NAV.slice(0, 7).map(map), mobileLinks: NAV.map(map),
+      isDesktop: !isMobile, isMobile, menuOpen: open, menuClosed: !open, showMobileMenu: isMobile && open,
+      menuLabel: open ? 'Close menu' : 'Open menu', toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+    };
+  }
+}
+</script>
+</body>
+</html>

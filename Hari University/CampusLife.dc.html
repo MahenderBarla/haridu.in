@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/modernist-8aa8bd0d-091c-49d7-966f-09bf9aaebbbc/styles.css">
+<script src="_ds/modernist-8aa8bd0d-091c-49d7-966f-09bf9aaebbbc/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<link rel="icon" type="image/png" href="uploads/favicon.png">
+<title>Campus Life · Hari University</title>
+<style>
+:root{--color-bg:#FFFFFF;--color-surface:#F2F7FF;--color-text:#172033;--color-accent:#0066FF;--color-accent-2:#00A3FF;--color-divider:#D5DEEC;--color-accent-100:#F2F7FF;--color-accent-200:#D9E8FF;--color-accent-300:#ADCCFF;--color-accent-400:#5C9DFF;--color-accent-500:#0066FF;--color-accent-600:#0052D6;--color-accent-700:#003B95;--color-accent-800:#002C70;--color-accent-900:#001D4A;--radius-sm:6px;--radius-md:8px;--radius-lg:14px;--shadow-sm:0 1px 2px rgba(0,59,149,.08);--shadow-md:0 6px 20px rgba(0,59,149,.10);--shadow-lg:0 18px 44px rgba(0,59,149,.14)}
+html{scroll-behavior:smooth}
+body{margin:0;background:#FFFFFF;color:#172033;font-family:"Archivo",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#0066FF}a:hover{color:#003B95}
+:focus-visible{outline:2px solid #0066FF;outline-offset:2px}
+</style>
+</helmet>
+<div style="min-height:100vh;background:#FFFFFF">
+<dc-import name="SiteTopbar" hint-size="100%,72px"></dc-import>
+<dc-import name="SiteHeader" current="campus" hint-size="100%,77px" style="position:sticky;top:0;z-index:30"></dc-import>
+<main>
+<section style="max-width:1280px;margin:0 auto;padding:clamp(16px,3vw,32px) clamp(20px,4vw,48px) 0">
+<div style="position:relative;height:clamp(420px,46vw,580px);border-radius:18px;overflow:hidden">
+<image-slot id="campus-hero" shape="rect" src="https://haridu.in/_next/image?url=%2Fimages%2Fds%2Fcampus-avenue-aerial.jpg&amp;w=1920&amp;q=75" placeholder="Campus hero image"></image-slot>
+<div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,29,74,.82) 0%,rgba(0,59,149,.4) 55%,rgba(0,59,149,0) 85%);pointer-events:none"></div>
+<div style="position:absolute;left:clamp(24px,5vw,64px);right:24px;bottom:clamp(28px,5vw,64px);display:flex;flex-direction:column;gap:16px;max-width:600px;pointer-events:none">
+<nav aria-label="Breadcrumb" style="font-size:13px;color:#D9E8FF;display:flex;gap:8px;pointer-events:auto"><a href="Hari University Home.dc.html" style="color:#D9E8FF;text-decoration:none">Home</a><span>/</span><span style="color:#FFFFFF;font-weight:600">Campus Life</span></nav>
+<h1 style="font-size:clamp(36px,4.8vw,64px);line-height:1.04;letter-spacing:-.03em;margin:0;color:#FFFFFF">Experience More Than Education</h1>
+<p style="font-size:clamp(16px,1.4vw,19px);line-height:1.6;color:#FFFFFF;margin:0">Kanha Shanti Vanam — a several-hundred-acre regenerated campus where learning, practice and community share one living landscape.</p>
+</div>
+</div>
+</section>
+
+<section style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,48px) 0">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:1px;background:#D5DEEC;border:1px solid #D5DEEC;border-radius:14px;overflow:hidden">
+<sc-for list="{{ features }}" as="f" hint-placeholder-count="4">
+<div style="background:#FFFFFF;padding:28px;display:flex;flex-direction:column;gap:10px"><span style="font-size:13px;font-weight:800;color:#0066FF">{{ f.n }}</span><h3 style="font-size:19px;margin:0">{{ f.title }}</h3><p style="margin:0;font-size:14px;line-height:1.6;color:#64748B">{{ f.desc }}</p></div>
+</sc-for>
+</div>
+</section>
+
+<section style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,48px) 0">
+<span style="font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#0066FF">Campus gallery</span>
+<h2 style="font-size:clamp(30px,3.4vw,44px);margin:10px 0 28px;letter-spacing:-.025em">Life at Kanha Shanti Vanam</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));grid-auto-rows:230px;gap:16px">
+<sc-for list="{{ gallery }}" as="g" hint-placeholder-count="8">
+<figure style="margin:0;position:relative;border-radius:14px;overflow:hidden;grid-row:{{ g.span }}"><div style="position:absolute;inset:0;transition:transform .6s ease" style-hover="transform:scale(1.07)"><image-slot id="{{ g.slot }}" shape="rect" src="{{ g.img }}" placeholder="Campus photo"></image-slot></div><figcaption style="position:absolute;left:12px;top:12px;margin:0;background:#FFFFFF;color:#172033;font-size:12px;font-weight:700;padding:6px 10px;border-radius:6px;pointer-events:none">{{ g.cap }}</figcaption></figure>
+</sc-for>
+</div>
+</section>
+
+<section style="margin-top:clamp(56px,7vw,96px);background:#F2F7FF">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,88px) clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(28px,4vw,56px);align-items:center">
+<div style="position:relative;height:clamp(280px,30vw,420px);border-radius:16px;overflow:hidden"><image-slot id="campus-heartfulness" shape="rect" src="https://haridu.in/_next/image?url=%2Fimages%2Fds%2Fmeditation-hall-aerial.jpg&amp;w=1200&amp;q=75" placeholder="Heartfulness image"></image-slot></div>
+<div style="display:flex;flex-direction:column;gap:16px;align-items:flex-start">
+<span style="font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#0066FF">Heartfulness at HARI</span>
+<h2 style="font-size:clamp(28px,3vw,40px);margin:0;letter-spacing:-.025em">A practice woven into daily life</h2>
+<p style="margin:0;color:#64748B;font-size:16px;line-height:1.65">Heartfulness is practised by millions across 160 countries. At Hari University it is part of everyday campus life — offered freely, with certified trainers and no charge.</p>
+<p style="margin:0;color:#64748B;font-size:16px;line-height:1.65">Students also step into community and ecological projects from their first year, bringing positive change through education and research.</p>
+</div>
+</div>
+</section>
+
+<section style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,48px)">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));background:#FFFFFF;border:2px solid #0066FF;border-radius:18px;overflow:hidden">
+<div style="position:relative;min-height:320px;background:#F2F7FF"><img src="uploads/hari-orientation-day-2026.jpeg" alt="Orientation Day 2026 poster" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%"></div>
+<div style="padding:clamp(28px,4vw,52px);display:flex;flex-direction:column;gap:16px;align-items:flex-start">
+<span style="font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0066FF">17 August 2026</span>
+<h2 style="font-size:clamp(28px,3vw,40px);margin:0;letter-spacing:-.025em">Orientation Day 2026</h2>
+<p style="margin:0;color:#64748B;font-size:16px;line-height:1.6">Newly admitted students and their families were welcomed to campus for student orientation, academic guidance, parent interaction and a first experience of life at Kanha Shanti Vanam.</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px"><a href="NewsEvents.dc.html" class="btn btn-primary" style="padding:13px 20px;border-radius:8px">All events</a><a href="Contact.dc.html" class="btn btn-secondary" style="padding:13px 20px;border-radius:8px;border-color:#0066FF;color:#0066FF">Plan a campus visit</a></div>
+</div>
+</div>
+</section>
+</main>
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const IMG = n => `https://haridu.in/_next/image?url=%2Fimages%2Fds%2F${encodeURIComponent(n)}&w=1200&q=75`;
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      features: [
+        { n: '01', title: 'Fully residential', desc: 'Every programme is residential — classmates become a community.' },
+        { n: '02', title: 'A living laboratory', desc: 'Smart farms, nurseries and an IoT-instrumented ecosystem on campus.' },
+        { n: '03', title: 'Human performance', desc: 'A 54,680 sq ft facility for sport, fitness and wellness research.' },
+        { n: '04', title: 'Community projects', desc: 'Ecological and social projects from the very first year.' },
+      ],
+      gallery: [
+        ['20220811_ADV_9021.jpg', 'Student community', 'span 2'], ['20260520_AJY_1775.JPG', 'Laboratories', 'span 1'], ['meditation-hall-aerial.jpg', 'Meditation halls', 'span 1'],
+        ['auditorium-cultural-event.jpg', 'Auditorium & culture', 'span 1'], ['gardens-tree-avenue.jpg', 'Tree-lined avenues', 'span 1'], ['20230703_VIK_2453.JPG', 'Sports & wellness', 'span 2'],
+        ['research-growth-chamber.jpg', 'Growth chambers', 'span 1'], ['20220614_ADV_3282-HDR.jpg', 'Art on campus', 'span 1'],
+      ].map(([n, cap, span], i) => ({ img: IMG(n), cap, span, slot: 'campus-g' + i })),
+    };
+  }
+}
+</script>
+</body>
+</html>

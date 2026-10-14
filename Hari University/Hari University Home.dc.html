@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/modernist-8aa8bd0d-091c-49d7-966f-09bf9aaebbbc/styles.css">
+<script src="_ds/modernist-8aa8bd0d-091c-49d7-966f-09bf9aaebbbc/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<link rel="icon" type="image/png" href="uploads/favicon.png">
+<link rel="apple-touch-icon" href="uploads/webclip.png">
+<style>
+:root{--color-bg:#FFFFFF;--color-surface:#F2F7FF;--color-text:#172033;--color-accent:#0066FF;--color-accent-2:#00A3FF;--color-divider:#D5DEEC;--color-accent-100:#F2F7FF;--color-accent-200:#D9E8FF;--color-accent-300:#ADCCFF;--color-accent-400:#5C9DFF;--color-accent-500:#0066FF;--color-accent-600:#0052D6;--color-accent-700:#003B95;--color-accent-800:#002C70;--color-accent-900:#001D4A;--radius-sm:6px;--radius-md:8px;--radius-lg:14px;--shadow-sm:0 1px 2px rgba(0,59,149,.08);--shadow-md:0 6px 20px rgba(0,59,149,.10);--shadow-lg:0 18px 44px rgba(0,59,149,.14)}
+html{scroll-behavior:smooth}
+body{margin:0;background:#FFFFFF;color:#172033;font-family:"Archivo",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#0066FF}a:hover{color:#003B95}
+:focus-visible{outline:2px solid #0066FF;outline-offset:2px}
+</style>
+</helmet>
+
+<div id="top" style="min-height:100vh;background:#FFFFFF">
+<dc-import name="SiteTopbar" show-announcement="{{ showAnnouncement }}" hint-size="100%,72px"></dc-import>
+<dc-import name="SiteHeader" current="home" hint-size="100%,77px" style="position:sticky;top:0;z-index:30"></dc-import>
+
+<main>
+<sc-if value="{{ heroSplit }}" hint-placeholder-val="{{ true }}">
+<section aria-labelledby="hero-h" style="max-width:1280px;margin:0 auto;padding:clamp(28px,5vw,64px) clamp(20px,4vw,48px) 0">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(28px,4vw,56px);align-items:center">
+<div style="display:flex;flex-direction:column;gap:22px;align-items:flex-start">
+<span style="display:flex;align-items:center;gap:10px;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#0066FF"><span style="width:28px;height:2px;background:#0066FF"></span>Welcome to Hari University</span>
+<h1 id="hero-h" style="font-size:clamp(40px,5.4vw,74px);line-height:1.02;letter-spacing:-.03em;margin:0;color:#172033;text-wrap:balance">Shape Your Future. <span style="color:#0066FF">Lead Tomorrow.</span></h1>
+<p style="font-size:clamp(16px,1.4vw,19px);line-height:1.6;color:#64748B;margin:0;max-width:540px;text-wrap:pretty">Discover your potential at Hari University through quality education, innovative learning, research, and real-world opportunities.</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px">
+<a href="#programs" class="btn btn-primary" style="padding:14px 22px;font-size:15px;border-radius:8px;gap:10px;box-shadow:0 8px 20px rgba(0,102,255,.25)">Explore Programs<svg width="16" height="16" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+<a href="#admissions" class="btn btn-secondary" style="padding:14px 22px;font-size:15px;border-radius:8px;border-color:#0066FF;color:#0066FF">Apply Now</a>
+</div>
+</div>
+<div style="position:relative;height:clamp(340px,42vw,560px)">
+<image-slot id="hero-campus" shape="rounded" radius="16" src="uploads/og-default.jpg" placeholder="Drop hero campus photograph"></image-slot>
+<div style="position:absolute;left:16px;bottom:16px;background:#FFFFFF;border-radius:10px;padding:12px 16px;box-shadow:0 10px 30px rgba(0,59,149,.18);display:flex;align-items:center;gap:12px;pointer-events:none">
+<span style="width:36px;height:36px;border-radius:8px;background:#F2F7FF;color:#0066FF;display:grid;place-items:center"><svg width="18" height="18" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+<span style="display:flex;flex-direction:column;line-height:1.25"><span style="font-weight:800;font-size:14px">Kanha Shanti Vanam</span><span style="font-size:12px;color:#64748B">Ranga Reddy District, Telangana</span></span>
+</div>
+</div>
+</div>
+</section>
+</sc-if>
+
+<sc-if value="{{ heroCarousel }}" hint-placeholder-val="{{ true }}">
+<section aria-roledescription="carousel" aria-label="Hari University highlights" onMouseEnter="{{ pause }}" onMouseLeave="{{ resume }}" onFocus="{{ pause }}" onBlur="{{ resume }}" style="position:relative;height:clamp(540px,60vw,720px);overflow:hidden;background:#001D4A">
+<h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);margin:0">Hari University — Shape Your Future. Lead Tomorrow.</h1>
+<sc-for list="{{ slides }}" as="s" hint-placeholder-count="1">
+<div role="group" aria-roledescription="slide" aria-label="{{ s.label }}" aria-hidden="{{ s.hidden }}" style="position:absolute;inset:0;opacity:{{ s.op }};transition:opacity .9s ease;pointer-events:{{ s.pe }}">
+<div style="position:absolute;inset:0;transform:scale({{ s.scale }});transition:transform 7s ease-out"><image-slot id="{{ s.slot }}" shape="rect" src="{{ s.img }}" placeholder="Hero slide image"></image-slot></div>
+<div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,29,74,.9) 0%,rgba(0,45,120,.62) 42%,rgba(0,59,149,.08) 78%);pointer-events:none"></div>
+<div style="position:relative;height:100%;max-width:1280px;margin:0 auto;padding:0 clamp(64px,8vw,112px);display:flex;flex-direction:column;justify-content:center;gap:22px;pointer-events:none;transform:translateY({{ s.ty }});transition:transform .9s ease">
+<span style="display:flex;align-items:center;gap:10px;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#FFFFFF"><span style="width:28px;height:2px;background:#00A3FF"></span>{{ s.eyebrow }}</span>
+<h2 style="margin:0;color:#FFFFFF;font-size:clamp(38px,5.4vw,76px);line-height:1.04;letter-spacing:-.03em;display:flex;flex-direction:column;align-items:flex-start;gap:8px"><span>{{ s.line1 }}</span><span style="background:{{ s.hlBg }};color:{{ s.hlFg }};padding:.02em .2em .08em;border-radius:6px">{{ s.line2 }}</span></h2>
+<p style="margin:0;color:#FFFFFF;font-size:clamp(16px,1.5vw,20px);line-height:1.6;max-width:560px">{{ s.text }}</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px;pointer-events:auto">
+<a href="{{ s.href1 }}" class="btn" style="padding:15px 22px;font-size:15px;border-radius:8px;background:#FFFFFF;color:#003B95;gap:10px;transition:transform .2s,box-shadow .2s" style-hover="transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.25);background:#F2F7FF">{{ s.cta1 }}<svg width="16" height="16" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+<a href="Admissions.dc.html#apply" class="btn btn-primary" style="padding:15px 22px;font-size:15px;border-radius:8px;gap:10px;transition:transform .2s,box-shadow .2s" style-hover="transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,102,255,.4)">Apply Now<svg width="16" height="16" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+</div>
+</div>
+</div>
+</sc-for>
+<button type="button" onClick="{{ prev }}" aria-label="Previous slide" style="position:absolute;left:clamp(10px,2vw,28px);top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:rgba(0,29,74,.3);color:#FFFFFF;display:grid;place-items:center;cursor:pointer;transition:background .2s,color .2s" style-hover="background:#FFFFFF;color:#003B95"><svg width="22" height="22" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="m15 18-6-6 6-6"></path></svg></button>
+<button type="button" onClick="{{ next }}" aria-label="Next slide" style="position:absolute;right:clamp(10px,2vw,28px);top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:rgba(0,29,74,.3);color:#FFFFFF;display:grid;place-items:center;cursor:pointer;transition:background .2s,color .2s" style-hover="background:#FFFFFF;color:#003B95"><svg width="22" height="22" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="m9 18 6-6-6-6"></path></svg></button>
+<div style="position:absolute;left:0;right:0;bottom:28px;max-width:1280px;margin:0 auto;padding:0 clamp(64px,8vw,112px);display:flex;align-items:center;gap:8px">
+<sc-for list="{{ dots }}" as="d" hint-placeholder-count="4">
+<button type="button" onClick="{{ d.go }}" aria-label="{{ d.label }}" aria-current="{{ d.current }}" style="width:{{ d.w }};height:10px;border-radius:999px;border:0;padding:0;cursor:pointer;background:{{ d.bg }};transition:width .4s,background .3s" style-hover="background:#FFFFFF"></button>
+</sc-for>
+<span style="margin-left:12px;color:#D9E8FF;font-size:13px;font-weight:700">{{ slideCounter }}</span>
+</div>
+</section>
+</sc-if>
+
+<section aria-label="At a glance" style="max-width:1280px;margin:0 auto;padding:clamp(28px,4vw,48px) clamp(20px,4vw,48px) 0">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));border-top:2px solid #172033;border-bottom:1px solid #D5DEEC">
+<sc-for list="{{ facts }}" as="f" hint-placeholder-count="4">
+<div style="padding:20px 20px 20px 0;display:flex;flex-direction:column;gap:4px">
+<span style="font-size:clamp(24px,2.4vw,32px);font-weight:800;color:#0066FF;letter-spacing:-.02em">{{ f.v }}</span>
+<span style="font-size:14px;color:#64748B">{{ f.l }}</span>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section id="programs" aria-labelledby="prog-h" style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,48px) 0;scroll-margin-top:80px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:16px 48px;align-items:end;margin-bottom:28px">
+<div><span style="font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#0066FF">01 · Academics</span><h2 id="prog-h" style="font-size:clamp(30px,3.4vw,44px);margin:10px 0 0;letter-spacing:-.025em">Explore Our Academic Programs</h2></div>
+<p style="margin:0;color:#64748B;font-size:16px;line-height:1.6;text-wrap:pretty">Eight fully residential programmes across four interdisciplinary Schools — each taught in concert with the others, never in isolation.</p>
+</div>
+<div role="tablist" aria-label="Filter by School" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px">
+<sc-for list="{{ tabs }}" as="t" hint-placeholder-count="5">
+<button type="button" role="tab" aria-selected="{{ t.active }}" onClick="{{ t.select }}" style="font:inherit;font-size:14px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;border:1px solid {{ t.border }};background:{{ t.bg }};color:{{ t.fg }}">{{ t.label }}</button>
+</sc-for>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:20px">
+<sc-for list="{{ programs }}" as="p" hint-placeholder-count="8">
+<article style="display:flex;flex-direction:column;background:#FFFFFF;border:1px solid #E3EAF5;border-radius:14px;overflow:hidden;box-shadow:0 1px 2px rgba(0,59,149,.06);transition:box-shadow .2s,transform .2s" style-hover="box-shadow:0 16px 36px rgba(0,59,149,.14);transform:translateY(-3px)">
+<div style="height:170px;position:relative;overflow:hidden"><div style="position:absolute;inset:0;transition:transform .6s ease" style-hover="transform:scale(1.07)"><image-slot id="{{ p.slot }}" shape="rect" src="{{ p.img }}" placeholder="Programme photo"></image-slot></div></div>
+<div style="padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1">
+<span style="font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0066FF">{{ p.school }}</span>
+<h3 style="font-size:19px;margin:0;line-height:1.25">{{ p.title }}</h3>
+<p style="margin:0;font-size:14px;line-height:1.55;color:#64748B;flex:1">{{ p.desc }}</p>
+<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;padding-top:12px;margin-top:4px;border-top:1px solid #EEF2F8">
+<span style="font-size:12px;color:#64748B">{{ p.meta }}</span>
+<a href="Academics.dc.html" style="font-size:14px;font-weight:700;color:#0066FF;text-decoration:none;display:flex;align-items:center;gap:6px" style-hover="color:#003B95">Learn More<svg width="14" height="14" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+</div>
+</div>
+</article>
+</sc-for>
+</div>
+</section>
+
+<section id="why" aria-labelledby="why-h" style="margin-top:clamp(56px,7vw,96px);background:#F2F7FF;scroll-margin-top:80px">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,88px) clamp(20px,4vw,48px)">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:16px 48px;align-items:end;margin-bottom:36px">
+<div><span style="font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#0066FF">02 · About</span><h2 id="why-h" style="font-size:clamp(30px,3.4vw,44px);margin:10px 0 0;letter-spacing:-.025em">Why Choose Hari University?</h2></div>
+<p style="margin:0;color:#64748B;font-size:16px;line-height:1.6;text-wrap:pretty">India's first greenfield, privately sponsored Deemed-to-be University, approved by the Government of India under UGC's Distinct Category.</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:1px;background:#D5DEEC;border:1px solid #D5DEEC;border-radius:14px;overflow:hidden">
+<div style="background:#FFFFFF;padding:28px;display:flex;flex-direction:column;gap:12px;transition:background .25s" style-hover="background:#F2F7FF"><span style="color:#0066FF"><svg width="30" height="30" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"></path><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"></path><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"></path></svg></span><h3 style="font-size:18px;margin:0">Interdisciplinary by design</h3><p style="margin:0;font-size:14px;line-height:1.6;color:#64748B">Students work alongside peers from Agriculture, Engineering, Management and Philosophy from Day 1.</p></div>
+<div style="background:#FFFFFF;padding:28px;display:flex;flex-direction:column;gap:12px;transition:background .25s" style-hover="background:#F2F7FF"><span style="color:#0066FF"><svg width="30" height="30" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"></path><path d="M8.5 2h7"></path><path d="M7 16h10"></path></svg></span><h3 style="font-size:18px;margin:0">Research from semester one</h3><p style="margin:0;font-size:14px;line-height:1.6;color:#64748B">Every student steps into an ongoing investigation from their very first semester — not preparing to do research, already doing it.</p></div>
+<div style="background:#FFFFFF;padding:28px;display:flex;flex-direction:column;gap:12px;transition:background .25s" style-hover="background:#F2F7FF"><span style="color:#0066FF"><svg width="30" height="30" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round"><path d="M7 20h10"></path><path d="M10 20c5.5-2.5.8-6.4 3-10"></path><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"></path><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"></path></svg></span><h3 style="font-size:18px;margin:0">A living laboratory</h3><p style="margin:0;font-size:14px;line-height:1.6;color:#64748B">A several-hundred-acre regenerated campus at Kanha Shanti Vanam, wired with IoT sensors — a dataset no classroom can replicate.</p></div>
+<div style="background:#FFFFFF;padding:28px;display:flex;flex-direction:column;gap:12px;transition:background .25s" style-hover="background:#F2F7FF"><span style="color:#0066FF"><svg width="30" height="30" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg></span><h3 style="font-size:18px;margin:0">Heartfulness Curriculum</h3><p style="margin:0;font-size:14px;line-height:1.6;color:#64748B">Brighter Minds, HELP, HELM and HOPE — frameworks for cognition, life skills, leadership and personal excellence.</p></div>
+<div style="background:#FFFFFF;padding:28px;display:flex;flex-direction:column;gap:12px;transition:background .25s" style-hover="background:#F2F7FF"><span style="color:#0066FF"><svg width="30" height="30" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path><path d="M7 21h10"></path><path d="M12 3v18"></path><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"></path></svg></span><h3 style="font-size:18px;margin:0">Ethics at the core</h3><p style="margin:0;font-size:14px;line-height:1.6;color:#64748B">Ethics is a credit-bearing core subject in every B.Tech — not an elective, not a footnote.</p></div>
+<div style="background:#FFFFFF;padding:28px;display:flex;flex-direction:column;gap:12px;transition:background .25s" style-hover="background:#F2F7FF"><span style="color:#0066FF"><svg width="30" height="30" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg></span><h3 style="font-size:18px;margin:0">Fully residential</h3><p style="margin:0;font-size:14px;line-height:1.6;color:#64748B">Every programme is fully residential — learning, practice and community life share one campus.</p></div>
+</div>
+</div>
+</section>
+
+<section id="leadership" aria-labelledby="lead-h" style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,48px) 0;scroll-margin-top:80px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:16px 48px;align-items:end;margin-bottom:28px">
+<div><span style="font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#0066FF">Leadership</span><h2 id="lead-h" style="font-size:clamp(30px,3.4vw,44px);margin:10px 0 0;letter-spacing:-.025em">Guided by purpose</h2></div>
+<p style="margin:0;color:#64748B;font-size:16px;line-height:1.6">The leadership shaping Hari University's vision of education, research and inner growth.</p>
+</div>
+<article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));border:1px solid #E3EAF5;border-radius:16px;overflow:hidden;background:#FFFFFF;box-shadow:0 6px 20px rgba(0,59,149,.08)">
+<div style="position:relative;min-height:clamp(280px,30vw,400px);background:#F2F7FF"><image-slot id="lead-vc" shape="rect" src="uploads/vice-chancellor-dr-narsi-reddy.jpg" placeholder="Vice Chancellor portrait"></image-slot></div>
+<div style="padding:clamp(28px,4vw,52px);display:flex;flex-direction:column;justify-content:center;gap:14px;border-left:4px solid #0066FF">
+<span style="font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#0066FF">Vice Chancellor</span>
+<h3 style="font-size:clamp(26px,2.8vw,36px);margin:0;letter-spacing:-.02em">Dr. Narsireddy Malgireddy</h3>
+<p style="margin:0;font-size:16px;line-height:1.65;color:#64748B">Leading Hari University's academic vision — interdisciplinary learning, research from the first semester, and education rooted in Heartfulness values.</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px;padding-top:6px"><a href="About.dc.html#leadership" class="btn btn-secondary" style="padding:12px 18px;border-radius:8px;border-color:#0066FF;color:#0066FF">About the University</a></div>
+</div>
+</article>
+</section>
+
+<section id="campus" aria-labelledby="campus-h" style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,48px) 0;scroll-margin-top:80px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:16px 48px;align-items:end;margin-bottom:28px">
+<div><span style="font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#0066FF">03 · Campus Life</span><h2 id="campus-h" style="font-size:clamp(30px,3.4vw,44px);margin:10px 0 0;letter-spacing:-.025em">Experience More Than Education</h2></div>
+<div style="display:flex;flex-direction:column;gap:16px;align-items:flex-start"><p style="margin:0;color:#64748B;font-size:16px;line-height:1.6">Laboratories, gardens, meditation halls and tree-lined avenues — campus life at Kanha Shanti Vanam is woven into every degree.</p><a href="CampusLife.dc.html" class="btn btn-secondary" style="padding:12px 18px;border-radius:8px;border-color:#0066FF;color:#0066FF;gap:8px">Discover Our Campus<svg width="16" height="16" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div>
+</div>
+<div style="display:flex;justify-content:flex-end;gap:10px;margin:-8px 0 16px">
+<button type="button" onClick="{{ campusPrev }}" aria-label="Scroll campus photos left" style="width:44px;height:44px;border-radius:50%;border:1px solid #D5DEEC;background:#FFFFFF;color:#172033;display:grid;place-items:center;cursor:pointer;transition:all .2s" style-hover="background:#0066FF;color:#FFFFFF;border-color:#0066FF"><svg width="22" height="22" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="m15 18-6-6 6-6"></path></svg></button>
+<button type="button" onClick="{{ campusNext }}" aria-label="Scroll campus photos right" style="width:44px;height:44px;border-radius:50%;border:1px solid #D5DEEC;background:#FFFFFF;color:#172033;display:grid;place-items:center;cursor:pointer;transition:all .2s" style-hover="background:#0066FF;color:#FFFFFF;border-color:#0066FF"><svg width="22" height="22" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="m9 18 6-6-6-6"></path></svg></button>
+</div>
+<div ref="{{ campusRef }}" style="display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding-bottom:4px">
+<sc-for list="{{ campusSlides }}" as="c" hint-placeholder-count="4">
+<figure style="flex:0 0 clamp(260px,31%,400px);height:clamp(320px,30vw,400px);scroll-snap-align:start;margin:0;position:relative;border-radius:14px;overflow:hidden;background:#F2F7FF">
+<div style="position:absolute;inset:0;transition:transform .6s ease" style-hover="transform:scale(1.06)"><image-slot id="{{ c.slot }}" shape="rect" src="{{ c.img }}" placeholder="Campus photo"></image-slot></div>
+<figcaption style="position:absolute;left:0;right:0;bottom:0;margin:0;padding:48px 20px 20px;background:linear-gradient(0deg,rgba(0,29,74,.85),rgba(0,29,74,0));color:#FFFFFF;pointer-events:none;display:flex;flex-direction:column;gap:4px"><span style="font-size:18px;font-weight:800">{{ c.title }}</span><span style="font-size:13px;color:#D9E8FF">{{ c.desc }}</span></figcaption>
+</figure>
+</sc-for>
+</div>
+</section>
+
+<section id="research" aria-labelledby="res-h" style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,48px) 0;scroll-margin-top:80px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(28px,4vw,56px)">
+<div style="display:flex;flex-direction:column;gap:20px">
+<span style="font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#0066FF">04 · Research &amp; Innovation</span>
+<h2 id="res-h" style="font-size:clamp(30px,3.4vw,44px);margin:0;letter-spacing:-.025em">From practice to proof.</h2>
+<p style="margin:0;color:#64748B;font-size:16px;line-height:1.6">Four research centres turn seventy-five years of Heartfulness practice into rigorous, evidence-led, peer-reviewed inquiry.</p>
+<div style="position:relative;height:280px;border-radius:14px;overflow:hidden"><image-slot id="research-img" shape="rect" src="https://haridu.in/_next/image?url=%2Fimages%2Fds%2Fresearch-growth-chamber.jpg&amp;w=1200&amp;q=75" placeholder="Research facility photo"></image-slot></div>
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:2px solid #172033">
+<div style="padding:14px 12px 0 0"><div style="font-size:28px;font-weight:800;color:#0066FF">4</div><div style="font-size:13px;color:#64748B">Research centres</div></div>
+<div style="padding:14px 12px 0 0"><div style="font-size:28px;font-weight:800;color:#0066FF">75 yrs</div><div style="font-size:13px;color:#64748B">Of proven practice</div></div>
+<div style="padding:14px 0 0 0"><div style="font-size:28px;font-weight:800;color:#0066FF">160+</div><div style="font-size:13px;color:#64748B">Countries reached</div></div>
+</div>
+</div>
+<div style="display:flex;flex-direction:column">
+<sc-for list="{{ centres }}" as="c" hint-placeholder-count="4">
+<div style="display:grid;grid-template-columns:48px minmax(0,1fr);gap:16px;padding:22px 0;border-bottom:1px solid #D5DEEC">
+<span style="font-size:14px;font-weight:800;color:#0066FF;padding-top:3px">{{ c.n }}</span>
+<div><h3 style="font-size:19px;margin:0 0 6px">{{ c.title }}</h3><p style="margin:0;font-size:14px;line-height:1.6;color:#64748B">{{ c.desc }}</p></div>
+</div>
+</sc-for>
+<div style="padding-top:24px"><a href="Research.dc.html" class="btn btn-primary" style="padding:13px 20px;border-radius:8px;gap:8px">Explore Research<svg width="16" height="16" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a></div>
+</div>
+</div>
+</section>
+
+<section id="admissions" aria-labelledby="adm-h" style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,48px) 0;scroll-margin-top:80px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));background:#FFFFFF;border:2px solid #0066FF;border-radius:18px;overflow:hidden;box-shadow:0 18px 44px rgba(0,59,149,.12)">
+<div style="position:relative;min-height:340px"><image-slot id="admissions-img" shape="rect" src="https://haridu.in/_next/image?url=%2Fimages%2Fds%2Fbuilding-brick-glass.jpg&amp;w=1200&amp;q=75" placeholder="Admissions image"></image-slot></div>
+<div style="padding:clamp(28px,4vw,52px);display:flex;flex-direction:column;gap:18px;align-items:flex-start">
+<span style="font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#003B95;background:#F2F7FF;padding:6px 10px;border-radius:6px">Admissions open · AY 2026–27</span>
+<h2 id="adm-h" style="font-size:clamp(32px,3.6vw,48px);margin:0;letter-spacing:-.025em">Your Journey Starts Here</h2>
+<p style="margin:0;color:#64748B;font-size:17px;line-height:1.6">Take the next step toward your academic and professional future.</p>
+<ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:15px">
+<li style="display:flex;gap:10px;align-items:center"><svg width="18" height="18" viewBox="0 0 24 24" style="fill:none;stroke:#0066FF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>B.Tech in four CSE specialisations</li>
+<li style="display:flex;gap:10px;align-items:center"><svg width="18" height="18" viewBox="0 0 24 24" style="fill:none;stroke:#0066FF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>B.Sc. (Hons) Agriculture and Horticulture</li>
+<li style="display:flex;gap:10px;align-items:center"><svg width="18" height="18" viewBox="0 0 24 24" style="fill:none;stroke:#0066FF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>BBA in Management · MA Philosophy</li>
+</ul>
+<div style="display:flex;flex-wrap:wrap;gap:12px;padding-top:6px">
+<a href="Admissions.dc.html#apply" class="btn btn-primary" style="padding:14px 22px;font-size:15px;border-radius:8px">Apply Now</a>
+<a href="#enquiry" class="btn btn-secondary" style="padding:14px 22px;font-size:15px;border-radius:8px;border-color:#0066FF;color:#0066FF">Admission Enquiry</a>
+</div>
+<p style="margin:0;font-size:13px;color:#64748B">Questions? <a href="mailto:admissions@haridu.in">admissions@haridu.in</a> · <a href="tel:+918143241135">+91 81432 41135</a></p>
+</div>
+</div>
+</section>
+
+<section id="placements" aria-labelledby="place-h" style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,48px) 0;scroll-margin-top:80px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:16px 48px;align-items:end;margin-bottom:28px">
+<div><span style="font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#0066FF">05 · Placements &amp; Careers</span><h2 id="place-h" style="font-size:clamp(30px,3.4vw,44px);margin:10px 0 0;letter-spacing:-.025em">Skills for a career. Skills for a life.</h2></div>
+<p style="margin:0;color:#64748B;font-size:16px;line-height:1.6">Career readiness is built into the curriculum — through live projects, research experience and leadership training.</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px">
+<div style="padding:24px;border:1px solid #E3EAF5;border-radius:14px;display:flex;flex-direction:column;gap:10px;transition:all .25s" style-hover="border-color:#0066FF;transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,59,149,.12)"><span style="font-size:13px;font-weight:800;color:#0066FF">Live projects</span><h3 style="font-size:18px;margin:0">AI-Powered Smart Farms</h3><p style="margin:0;font-size:14px;line-height:1.6;color:#64748B">Engineering and Agriculture students co-own working platforms from the ground up.</p></div>
+<div style="padding:24px;border:1px solid #E3EAF5;border-radius:14px;display:flex;flex-direction:column;gap:10px;transition:all .25s" style-hover="border-color:#0066FF;transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,59,149,.12)"><span style="font-size:13px;font-weight:800;color:#0066FF">Research experience</span><h3 style="font-size:18px;margin:0">Real data, real questions</h3><p style="margin:0;font-size:14px;line-height:1.6;color:#64748B">Data Science students work on live ecological datasets from the campus.</p></div>
+<div style="padding:24px;border:1px solid #E3EAF5;border-radius:14px;display:flex;flex-direction:column;gap:10px;transition:all .25s" style-hover="border-color:#0066FF;transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,59,149,.12)"><span style="font-size:13px;font-weight:800;color:#0066FF">Leadership</span><h3 style="font-size:18px;margin:0">HELM leadership mastery</h3><p style="margin:0;font-size:14px;line-height:1.6;color:#64748B">Executive clarity and decision-making developed alongside technical skill.</p></div>
+<div style="padding:24px;border:1px solid #E3EAF5;border-radius:14px;display:flex;flex-direction:column;gap:10px;transition:all .25s" style-hover="border-color:#0066FF;transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,59,149,.12)"><span style="font-size:13px;font-weight:800;color:#0066FF">Industry readiness</span><h3 style="font-size:18px;margin:0">ESG &amp; sustainability</h3><p style="margin:0;font-size:14px;line-height:1.6;color:#64748B">Strategy for a resource-constrained world, drawn from the campus's own regeneration model.</p></div>
+</div>
+<div style="margin-top:20px;padding:20px;border:1.5px dashed #ADCCFF;border-radius:14px;background:#F2F7FF;display:flex;flex-wrap:wrap;align-items:center;gap:16px">
+<span style="font-size:13px;color:#003B95;font-weight:600;flex:1;min-width:220px">Placeholder — recruiter logos and placement statistics will appear here once verified.</span>
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<span style="width:110px;height:44px;border-radius:8px;background:#FFFFFF;border:1px solid #D9E8FF;display:grid;place-items:center;font-size:11px;color:#64748B">Partner logo</span>
+<span style="width:110px;height:44px;border-radius:8px;background:#FFFFFF;border:1px solid #D9E8FF;display:grid;place-items:center;font-size:11px;color:#64748B">Partner logo</span>
+<span style="width:110px;height:44px;border-radius:8px;background:#FFFFFF;border:1px solid #D9E8FF;display:grid;place-items:center;font-size:11px;color:#64748B">Partner logo</span>
+<span style="width:110px;height:44px;border-radius:8px;background:#FFFFFF;border:1px solid #D9E8FF;display:grid;place-items:center;font-size:11px;color:#64748B">Partner logo</span>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="test-h" style="margin-top:clamp(56px,7vw,96px);background:#F2F7FF">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,88px) clamp(20px,4vw,48px)">
+<span style="font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#0066FF">06 · Voices</span>
+<h2 id="test-h" style="font-size:clamp(30px,3.4vw,44px);margin:10px 0 32px;letter-spacing:-.025em">What our community says</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px">
+<sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="3">
+<figure style="margin:0;background:#FFFFFF;border-radius:14px;padding:28px;display:flex;flex-direction:column;gap:18px;box-shadow:0 1px 2px rgba(0,59,149,.06);transition:all .25s" style-hover="transform:translateY(-4px);box-shadow:0 16px 36px rgba(0,59,149,.12)">
+<div style="display:flex;justify-content:space-between;align-items:center"><svg width="28" height="28" viewBox="0 0 24 24" style="fill:#D9E8FF;stroke:#0066FF;stroke-width:1.4;stroke-linejoin:round"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path></svg><span style="font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#003B95;border:1px dashed #5C9DFF;padding:3px 8px;border-radius:4px">Placeholder</span></div>
+<blockquote style="margin:0;font-size:16px;line-height:1.6;color:#172033;flex:1">{{ t.quote }}</blockquote>
+<figcaption style="display:flex;align-items:center;gap:12px;margin:0"><image-slot id="{{ t.slot }}" shape="circle" src="{{ t.img }}" style="width:52px;height:52px;flex:none" placeholder="Photo"></image-slot><span style="display:flex;flex-direction:column"><span style="font-weight:800;font-size:14px;color:#172033">{{ t.name }}</span><span style="font-size:13px;color:#64748B">{{ t.role }}</span></span></figcaption>
+</figure>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section id="events" aria-labelledby="news-h" style="scroll-margin-top:80px;max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,48px) 0">
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:16px;margin-bottom:28px">
+<div><span style="font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#0066FF">07 · News &amp; Events</span><h2 id="news-h" style="font-size:clamp(30px,3.4vw,44px);margin:10px 0 0;letter-spacing:-.025em">Latest from campus</h2></div>
+<a href="NewsEvents.dc.html" style="font-weight:700;font-size:15px;text-decoration:none;display:flex;align-items:center;gap:6px">View all news<svg width="16" height="16" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:20px;margin-bottom:44px">
+<sc-for list="{{ events }}" as="ev" hint-placeholder-count="3">
+<article style="display:flex;flex-direction:column;border:1px solid #E3EAF5;border-radius:14px;overflow:hidden;background:#FFFFFF;transition:box-shadow .2s" style-hover="box-shadow:0 16px 36px rgba(0,59,149,.14)">
+<button type="button" onClick="{{ ev.open }}" aria-label="{{ ev.aria }}" style="all:unset;cursor:zoom-in;position:relative;display:block;height:340px;background:#F2F7FF;overflow:hidden">
+<img src="{{ ev.cover }}" alt="{{ ev.title }} poster" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .3s" style-hover="transform:scale(1.03)">
+<span style="position:absolute;right:12px;bottom:12px;background:#FFFFFF;color:#003B95;font-size:12px;font-weight:700;padding:6px 10px;border-radius:6px;box-shadow:0 4px 12px rgba(0,29,74,.2)">{{ ev.count }}</span>
+</button>
+<div style="padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1">
+<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:12px"><span style="font-weight:800;color:#003B95;background:#F2F7FF;padding:3px 8px;border-radius:4px">{{ ev.cat }}</span><span style="font-weight:700;color:#172033">{{ ev.date }}</span></div>
+<h3 style="font-size:18px;line-height:1.3;margin:0">{{ ev.title }}</h3>
+<p style="margin:0;font-size:14px;line-height:1.55;color:#64748B;flex:1">{{ ev.excerpt }}</p>
+<div style="display:flex;gap:8px;align-items:flex-start;font-size:13px;color:#172033;padding-top:10px;border-top:1px solid #EEF2F8"><svg width="16" height="16" viewBox="0 0 24 24" style="fill:none;stroke:#0066FF;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none;margin-top:1px"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>{{ ev.venue }}</div>
+</div>
+</article>
+</sc-for>
+</div>
+<h3 style="font-size:20px;margin:0 0 18px;padding-top:16px;border-top:2px solid #172033">Latest news</h3>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,270px),1fr));gap:20px">
+<sc-for list="{{ news }}" as="n" hint-placeholder-count="4">
+<article style="display:flex;flex-direction:column;border:1px solid #E3EAF5;border-radius:14px;overflow:hidden;background:#FFFFFF;transition:box-shadow .2s" style-hover="box-shadow:0 16px 36px rgba(0,59,149,.12)">
+<div style="height:170px;position:relative;overflow:hidden"><div style="position:absolute;inset:0;transition:transform .6s ease" style-hover="transform:scale(1.07)"><image-slot id="{{ n.slot }}" shape="rect" src="{{ n.img }}" placeholder="News image"></image-slot></div></div>
+<div style="padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1">
+<div style="display:flex;gap:10px;align-items:center;font-size:12px"><span style="font-weight:800;color:#003B95;background:#F2F7FF;padding:3px 8px;border-radius:4px">{{ n.cat }}</span><span style="color:#64748B">{{ n.date }}</span></div>
+<h3 style="font-size:17px;line-height:1.3;margin:0">{{ n.title }}</h3>
+<p style="margin:0;font-size:14px;line-height:1.55;color:#64748B;flex:1">{{ n.excerpt }}</p>
+<a href="{{ n.href }}" style="font-size:14px;font-weight:700;text-decoration:none;padding-top:6px">Read More →</a>
+</div>
+</article>
+</sc-for>
+</div>
+</section>
+
+<section id="enquiry" aria-labelledby="enq-h" style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,48px);scroll-margin-top:80px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:clamp(28px,4vw,56px);border-top:2px solid #172033;padding-top:36px">
+<div style="display:flex;flex-direction:column;gap:18px">
+<span style="font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#0066FF">08 · Contact Us</span>
+<h2 id="enq-h" style="font-size:clamp(30px,3.4vw,44px);margin:0;letter-spacing:-.025em">Admission enquiry</h2>
+<p style="margin:0;color:#64748B;font-size:16px;line-height:1.6">Plan your visit to Kanha Shanti Vanam, explore our programmes, or reach out for admissions guidance.</p>
+<div style="display:flex;flex-direction:column;gap:14px;font-size:15px;padding-top:8px">
+<div style="display:flex;gap:12px"><svg width="20" height="20" viewBox="0 0 24 24" style="fill:none;stroke:#0066FF;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none;margin-top:2px"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg><span>13-110, Kanha Shanti Vanam, Chegur, Nandigama Mandal, Ranga Reddy District, Telangana 509328</span></div>
+<div style="display:flex;gap:12px"><svg width="20" height="20" viewBox="0 0 24 24" style="fill:none;stroke:#0066FF;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg><a href="mailto:admissions@haridu.in">admissions@haridu.in</a></div>
+<div style="display:flex;gap:12px"><svg width="20" height="20" viewBox="0 0 24 24" style="fill:none;stroke:#0066FF;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><span><a href="tel:+918143241135">+91 81432 41135</a> · <a href="tel:+916309997464">+91 63099 97464</a></span></div>
+</div>
+</div>
+<div style="background:#F2F7FF;border-radius:16px;padding:clamp(22px,3vw,36px)">
+<sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+<div role="status" style="display:flex;flex-direction:column;gap:14px;align-items:flex-start;padding:20px 0">
+<span style="width:52px;height:52px;border-radius:50%;background:#0066FF;color:#FFFFFF;display:grid;place-items:center"><svg width="26" height="26" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round"><path d="M20 6 9 17l-5-5"></path></svg></span>
+<h3 style="font-size:24px;margin:0">Thank you, {{ sentName }}.</h3>
+<p style="margin:0;color:#64748B;font-size:15px;line-height:1.6">Your enquiry about {{ sentProgram }} has been recorded. Prototype only — this form is not yet connected to a server.</p>
+<button type="button" onClick="{{ resetForm }}" class="btn btn-secondary" style="border-radius:8px;border-color:#0066FF;color:#0066FF;padding:11px 18px">Send another enquiry</button>
+</div>
+</sc-if>
+<sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+<form novalidate="" onSubmit="{{ submit }}" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:16px">
+<div class="field"><label for="f-name" style="font-size:13px;font-weight:600;color:#172033">Full name *</label><input id="f-name" name="name" class="input" autocomplete="name" style="background:#FFFFFF;min-height:46px;border-radius:8px;font-size:15px"><sc-if value="{{ errName }}" hint-placeholder-val="{{ false }}"><span role="alert" style="display:block;font-size:12px;color:#C62828;margin-top:5px">{{ errName }}</span></sc-if></div>
+<div class="field"><label for="f-email" style="font-size:13px;font-weight:600;color:#172033">Email *</label><input id="f-email" name="email" type="email" class="input" autocomplete="email" style="background:#FFFFFF;min-height:46px;border-radius:8px;font-size:15px"><sc-if value="{{ errEmail }}" hint-placeholder-val="{{ false }}"><span role="alert" style="display:block;font-size:12px;color:#C62828;margin-top:5px">{{ errEmail }}</span></sc-if></div>
+<div class="field"><label for="f-phone" style="font-size:13px;font-weight:600;color:#172033">Phone *</label><input id="f-phone" name="phone" type="tel" class="input" autocomplete="tel" placeholder="+91" style="background:#FFFFFF;min-height:46px;border-radius:8px;font-size:15px"><sc-if value="{{ errPhone }}" hint-placeholder-val="{{ false }}"><span role="alert" style="display:block;font-size:12px;color:#C62828;margin-top:5px">{{ errPhone }}</span></sc-if></div>
+<div class="field"><label for="f-prog" style="font-size:13px;font-weight:600;color:#172033">Program of interest *</label><select id="f-prog" name="program" class="input" style="background:#FFFFFF;min-height:46px;border-radius:8px;font-size:15px"><option value="">Select a programme</option><sc-for list="{{ allPrograms }}" as="o" hint-placeholder-count="8"><option value="{{ o.title }}">{{ o.title }}</option></sc-for></select><sc-if value="{{ errProgram }}" hint-placeholder-val="{{ false }}"><span role="alert" style="display:block;font-size:12px;color:#C62828;margin-top:5px">{{ errProgram }}</span></sc-if></div>
+<div class="field" style="grid-column:1/-1"><label for="f-msg" style="font-size:13px;font-weight:600;color:#172033">Message</label><textarea id="f-msg" name="message" class="input" rows="4" style="background:#FFFFFF;border-radius:8px;font-size:15px"></textarea></div>
+<div style="grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:16px"><button type="submit" class="btn btn-primary" style="padding:14px 24px;font-size:15px;border-radius:8px;gap:8px">Submit enquiry<svg width="16" height="16" viewBox="0 0 24 24" style="fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button><span style="font-size:12px;color:#64748B">* Required fields</span></div>
+</form>
+</sc-if>
+</div>
+</div>
+</section>
+</main>
+
+<sc-if value="{{ lbOpen }}" hint-placeholder-val="{{ false }}">
+<div role="dialog" aria-modal="true" aria-label="{{ lbTitle }}" onClick="{{ lbClose }}" style="position:fixed;inset:0;z-index:100;background:rgba(0,29,74,.88);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:20px">
+<img src="{{ lbSrc }}" alt="{{ lbTitle }}" onClick="{{ stop }}" style="max-width:min(92vw,900px);max-height:78vh;object-fit:contain;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.4);background:#FFFFFF">
+<div onClick="{{ stop }}" style="display:flex;align-items:center;gap:14px;color:#FFFFFF;font-size:14px">
+<button type="button" onClick="{{ lbPrev }}" aria-label="Previous poster" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:transparent;color:#FFFFFF;cursor:pointer;font-size:18px" style-hover="background:rgba(255,255,255,.12)">‹</button>
+<span style="min-width:160px;text-align:center"><strong>{{ lbTitle }}</strong> · {{ lbPos }}</span>
+<button type="button" onClick="{{ lbNext }}" aria-label="Next poster" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:transparent;color:#FFFFFF;cursor:pointer;font-size:18px" style-hover="background:rgba(255,255,255,.12)">›</button>
+<button type="button" onClick="{{ lbClose }}" aria-label="Close" style="height:44px;padding:0 16px;border-radius:8px;border:0;background:#FFFFFF;color:#003B95;font-weight:700;cursor:pointer">Close</button>
+</div>
+</div>
+</sc-if>
+
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;heroStyle&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;carousel&quot;,&quot;split&quot;],&quot;default&quot;:&quot;carousel&quot;,&quot;tsType&quot;:&quot;'carousel'|'split'&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;showAnnouncement&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Header&quot;}}">
+const IMG = (n, w = 1200) => `https://haridu.in/_next/image?url=%2Fimages%2Fds%2F${encodeURIComponent(n)}&w=${w}&q=75`;
+const SLIDES = [
+  { slot: 'hero-s1', img: 'uploads/og-default.jpg', eyebrow: 'Welcome to Hari University', line1: 'Shape Your Future.', line2: 'Lead Tomorrow.', hlBg: '#0066FF', hlFg: '#FFFFFF', text: 'Discover your potential through quality education, innovative learning, research, and real-world opportunities.', cta1: 'Explore Programs', href1: 'Academics.dc.html' },
+  { slot: 'hero-s2', img: IMG('20260520_AJY_1775.JPG', 1920), eyebrow: 'Research from semester one', line1: 'Where Consciousness', line2: 'Meets Research', hlBg: '#FFFFFF', hlFg: '#003B95', text: 'Join real investigations in neuroscience, regenerative agriculture and AI from your very first semester.', cta1: 'Explore Research', href1: 'Research.dc.html' },
+  { slot: 'hero-s3', img: IMG('20220811_ADV_9021.jpg', 1920), eyebrow: 'A residential community', line1: 'Great Ideas Begin', line2: 'Together', hlBg: '#0066FF', hlFg: '#FFFFFF', text: 'Learn alongside peers from Agriculture, Engineering, Management and Philosophy — from Day 1.', cta1: 'Discover Campus Life', href1: 'CampusLife.dc.html' },
+  { slot: 'hero-s4', img: IMG('research-tissue-culture.jpg', 1920), eyebrow: 'A living laboratory', line1: 'Innovation Begins with', line2: 'Action', hlBg: '#FFFFFF', hlFg: '#003B95', text: 'Smart farms, tissue-culture labs and an IoT-instrumented campus turn every degree into hands-on practice.', cta1: 'Explore Programs', href1: 'Academics.dc.html' },
+];
+const CAMPUS = [
+  ['20220811_ADV_9021.jpg', 'Student community', 'Life on a residential campus'], ['20260520_AJY_1775.JPG', 'Laboratories', 'Hands-on science from Day 1'],
+  ['meditation-hall-aerial.jpg', 'Meditation halls', 'Heartfulness, offered freely'], ['auditorium-cultural-event.jpg', 'Auditorium & culture', 'Events, music and celebration'],
+  ['gardens-tree-avenue.jpg', 'Gardens & smart farms', 'A regenerated landscape'], ['20230703_VIK_2453.JPG', 'Sports & wellness', 'Centre for Human Performance'],
+  ['research-growth-chamber.jpg', 'Growth chambers', 'Controlled-environment research'], ['20220614_ADV_3282-HDR.jpg', 'Art on campus', 'The self-made man sculpture'],
+].map(([n, title, desc], i) => ({ img: IMG(n), title, desc, slot: 'campus-c' + i }));
+const PROGRAMS = [
+  { id: 'agri', school: 'Agricultural Sciences', title: 'B.Sc. (Hons) Agriculture', meta: '4 years · Residential', desc: 'The Evergreen Revolution — regenerative methods that restore soil health and cut water dependency.', img: IMG('research-tissue-culture.jpg') },
+  { id: 'agri', school: 'Agricultural Sciences', title: 'B.Sc. (Hons) Horticulture', meta: '4 years · Residential', desc: 'Tissue culture, grafting, and Mega and Exotic Nursery systems on a living campus.', img: IMG('20260520_AJY_1887.JPG') },
+  { id: 'eng', school: 'Engineering & Technology', title: 'B.Tech Computer Science', meta: '4 years · Residential', desc: 'Software engineering, systems design and computational thinking.', img: IMG('20260520_AJY_1835.JPG') },
+  { id: 'eng', school: 'Engineering & Technology', title: 'B.Tech CS (Artificial Intelligence)', meta: '4 years · Residential', desc: 'Ethical AI, machine learning and deep learning.', img: IMG('20260520_AJY_1782.JPG') },
+  { id: 'eng', school: 'Engineering & Technology', title: 'B.Tech CS (Data Science)', meta: '4 years · Residential', desc: 'Statistical modelling and applied analytics on live campus data.', img: IMG('research-lab-detail.jpg') },
+  { id: 'eng', school: 'Engineering & Technology', title: 'B.Tech CS (Cyber Security)', meta: '4 years · Residential', desc: 'Network security, cryptography and digital governance.', img: IMG('20260520_AJY_1775.JPG') },
+  { id: 'mgmt', school: 'Management & Entrepreneurship', title: 'BBA in Management', meta: '3 years · Residential', desc: 'Conscious capitalism, heartful leadership and ESG strategy.', img: IMG('auditorium-cultural-event.jpg') },
+  { id: 'phil', school: 'Philosophy & Arts', title: 'MA Philosophy', meta: '2 years · Residential', desc: 'Vedanta, Jain philosophy, Samkhya and the philosophy of consciousness.', img: IMG('20190429_LAL_5393.jpg') },
+].map((p, i) => ({ ...p, slot: 'prog-' + i }));
+const EVENTS = [
+  { cat: 'Merit Awards', date: '06 Aug 2026 · Thursday', title: 'HARI Udaan 2026 — Vijayawada', excerpt: 'Andhra Pradesh Merit Excellence Awards: Gold (95–100%), Silver (90–94.99%) and Bronze (85–89.99%) honours for Intermediate achievers.', venue: 'Sree Srinivas Conventions, Kunchanapalli, Tadepalli, Vijayawada', posters: ['uploads/hari-udaan-vijayawada-main.png', 'uploads/hari-udaan-vijayawada-awards.png', 'uploads/hari-udaan-vijayawada-details.png', 'uploads/hari-udaan-vijayawada-campus.png'] },
+  { cat: 'Campus Event', date: '17 Aug 2026 · 9:00 AM', title: 'Orientation Day 2026', excerpt: 'Newly admitted students and families welcomed to campus, with Chief Guest Shri Kamlesh D. Patel (Daaji), Chancellor.', venue: 'Hari University, Kanha Shanti Vanam, Hyderabad', posters: ['uploads/hari-orientation-day-2026.jpeg'] },
+  { cat: 'Merit Awards', date: '05 Jul 2026', title: 'HARI Udaan 2026 — Kurnool', excerpt: 'State Merit Excellence Awards felicitating Intermediate toppers with 95% and above — gold medals, certificates and merit-based scholarships.', venue: 'Shri Ram Chandra Mission, Ganesh Nagar, near C-Camp, Kurnool', posters: ['uploads/hari-udaan-2026.jpeg', 'uploads/hari-udaan-2026-details.jpeg'] },
+];
+const TABS = [['all', 'All programmes'], ['agri', 'Agricultural Sciences'], ['eng', 'Engineering & Technology'], ['mgmt', 'Management'], ['phil', 'Philosophy & Arts']];
+const NAV = [['Home', '#top'], ['About Us', '#why'], ['Academics', '#programs'], ['Admissions', '#admissions'], ['Research', '#research'], ['Campus Life', '#campus'], ['Placements', '#placements'], ['Contact Us', '#enquiry']].map(([label, href]) => ({ label, href }));
+
+class Component extends DCLogic {
+  state = { w: typeof window !== 'undefined' ? window.innerWidth : 1280, menuOpen: false, filter: 'all', errors: {}, sent: null, lb: null };
+  step = (d) => this.setState(s => { if (!s.lb) return null; const n = EVENTS[s.lb.e].posters.length; return { lb: { e: s.lb.e, i: (s.lb.i + d + n) % n } }; });
+  campusRef = React.createRef();
+  goSlide = (i) => this.setState({ slide: (i + SLIDES.length) % SLIDES.length });
+  componentDidMount() {
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      this.timer = setInterval(() => { if (!this.paused && !document.hidden) this.goSlide((this.state.slide || 0) + 1); }, 6000);
+    }
+    this.onKey = (e) => { if (!this.state.lb) return; if (e.key === 'Escape') this.setState({ lb: null }); if (e.key === 'ArrowRight') this.step(1); if (e.key === 'ArrowLeft') this.step(-1); };
+    window.addEventListener('keydown', this.onKey);
+    this.onScroll = () => {
+      let cur = '#top';
+      for (const l of NAV) { if (l.href === '#top') continue; const el = document.querySelector(l.href); if (el && el.getBoundingClientRect().top < 140) cur = l.href; }
+      if (cur !== this.state.active) this.setState({ active: cur });
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onResize = () => this.setState({ w: window.innerWidth, menuOpen: window.innerWidth < 1040 ? this.state.menuOpen : false });
+    window.addEventListener('resize', this.onResize);
+  }
+  componentWillUnmount() { clearInterval(this.timer); window.removeEventListener('resize', this.onResize); window.removeEventListener('keydown', this.onKey); window.removeEventListener('scroll', this.onScroll); }
+  submit = (e) => {
+    e.preventDefault();
+    const d = Object.fromEntries(new FormData(e.target).entries());
+    const errors = {};
+    if (!d.name || d.name.trim().length < 2) errors.name = 'Please enter your full name.';
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email || '')) errors.email = 'Please enter a valid email address.';
+    if ((d.phone || '').replace(/\D/g, '').length < 10) errors.phone = 'Please enter a valid phone number (10+ digits).';
+    if (!d.program) errors.program = 'Please choose a programme.';
+    if (Object.keys(errors).length) { this.setState({ errors }); const f = e.target.querySelector('#f-' + ({ name: 'name', email: 'email', phone: 'phone', program: 'prog' })[Object.keys(errors)[0]]); f && f.focus(); return; }
+    this.setState({ errors: {}, sent: { name: d.name.trim().split(' ')[0], program: d.program } });
+  };
+  renderVals() {
+    const { w, menuOpen, filter, errors, sent } = this.state;
+    const isMobile = w < 1040;
+    const active = this.state.active || '#top';
+    const layout = this.props.heroStyle ?? 'carousel';
+    const cur = this.state.slide || 0;
+    const scrollCampus = d => { const el = this.campusRef.current; if (el) el.scrollBy({ left: d * Math.max(280, el.clientWidth * 0.66), behavior: 'smooth' }); };
+    return {
+      showAnnouncement: this.props.showAnnouncement ?? true,
+      isDesktop: !isMobile, isMobile, menuOpen, menuClosed: !menuOpen, showMobileMenu: isMobile && menuOpen,
+      menuLabel: menuOpen ? 'Close menu' : 'Open menu',
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      heroSplit: layout === 'split', heroCarousel: layout !== 'split',
+      slides: SLIDES.map((s, i) => { const a = i === cur; return { ...s, op: a ? 1 : 0, pe: a ? 'auto' : 'none', hidden: a ? undefined : 'true', scale: a ? 1.06 : 1, ty: a ? '0px' : '18px', label: `${i + 1} of ${SLIDES.length}` }; }),
+      dots: SLIDES.map((s, i) => { const a = i === cur; return { w: a ? '36px' : '10px', bg: a ? '#FFFFFF' : 'rgba(255,255,255,.45)', current: a ? 'true' : undefined, label: `Go to slide ${i + 1}`, go: () => this.goSlide(i) }; }),
+      slideCounter: `0${cur + 1} / 0${SLIDES.length}`,
+      prev: () => this.goSlide(cur - 1), next: () => this.goSlide(cur + 1),
+      pause: () => { this.paused = true; }, resume: () => { this.paused = false; },
+      campusRef: this.campusRef, campusPrev: () => scrollCampus(-1), campusNext: () => scrollCampus(1),
+      campusSlides: CAMPUS,
+      navLinks: NAV.filter(l => l.href !== '#enquiry').map(l => { const a = l.href === active; return { ...l, current: a ? 'page' : undefined, fg: a ? '#0066FF' : '#172033', bg: a ? '#F2F7FF' : 'transparent' }; }),
+      mobileLinks: NAV,
+      facts: [
+        { v: 'UGC', l: 'Deemed-to-be University, Distinct Category' },
+        { v: '4', l: 'Interdisciplinary Schools' },
+        { v: '8', l: 'Undergraduate & postgraduate programmes' },
+        { v: '100%', l: 'Fully residential programmes' },
+      ],
+      tabs: TABS.map(([id, label]) => { const a = filter === id; return { label, active: a, bg: a ? '#0066FF' : '#FFFFFF', fg: a ? '#FFFFFF' : '#172033', border: a ? '#0066FF' : '#D5DEEC', select: () => this.setState({ filter: id }) }; }),
+      programs: filter === 'all' ? PROGRAMS : PROGRAMS.filter(p => p.id === filter),
+      allPrograms: PROGRAMS,
+      centres: [
+        { n: '01', title: 'Centre for Consciousness & Inner Sciences', desc: 'The neuroscience, physiology and psychology of meditation, studied through rigorous empirical methods.' },
+        { n: '02', title: 'Centre for Regenerative Agriculture', desc: 'Soil-microbiome recovery, biochar and precision water management on an active regeneration campus.' },
+        { n: '03', title: 'Heartfulness Innovation Lab', desc: 'AI, plant sciences and nature–human interaction — home to the Tree Rhythms Project.' },
+        { n: '04', title: 'Centre for Human Performance', desc: 'Sports science and holistic wellness research in a 54,680 sq ft purpose-built facility.' },
+      ],
+      testimonials: [
+        { quote: 'Student testimonial goes here — an approved quote about learning and life on campus.', name: 'Student name', role: 'Programme · Year', slot: 'testi-1', img: IMG('20220811_ADV_9021.jpg', 640) },
+        { quote: 'Faculty testimonial goes here — an approved quote about teaching and research at HARI.', name: 'Faculty name', role: 'School · Designation', slot: 'testi-2', img: IMG('20260520_AJY_1887.JPG', 640) },
+        { quote: 'Parent or alumni testimonial goes here — awaiting genuine, approved content.', name: 'Name', role: 'Relationship to HARI', slot: 'testi-3', img: IMG('auditorium-cultural-event.jpg', 640) },
+      ],
+      news: [
+        { cat: 'Admissions', date: 'AY 2026–27', title: 'Admissions open across all four Schools', excerpt: 'Applications are open for B.Tech, B.Sc. (Hons), BBA and MA Philosophy.', img: IMG('20260520_AJY_1835.JPG'), slot: 'news-1', href: '#admissions' },
+        { cat: 'Research', date: '2026', title: 'EEG alpha modulation across meditation experience levels', excerpt: 'Published in Annals of Neurosciences — a cross-sectional EEG study of Heartfulness meditation.', img: IMG('gardens-meditation-grove.jpg'), slot: 'news-2', href: 'https://doi.org/10.1177/09727531251400095' },
+        { cat: 'Research', date: '2026', title: 'Conserving Ficus species at Kanha Shanti Vanam', excerpt: 'Field documentation of keystone fig species on campus, published in Phytology.', img: IMG('campus-gardens-aerial.jpg'), slot: 'news-3', href: 'https://doi.org/10.64171/IJPR.2026.6.1.5-9' },
+      ],
+      events: EVENTS.map((ev, e) => ({ ...ev, cover: ev.posters[0], count: ev.posters.length > 1 ? `View ${ev.posters.length} posters` : 'View poster', aria: `Open ${ev.title} poster`, open: () => this.setState({ lb: { e, i: 0 } }) })),
+      leaders: [
+        { role: 'Chancellor', name: 'Shri Kamlesh D. Patel (Daaji)', note: 'Global Guide of Heartfulness', img: 'uploads/management-chancellor-dummy.jpg', slot: 'lead-chancellor' },
+        { role: 'Vice Chancellor', name: 'Dr. Narsireddy Malgireddy', note: 'Hari University', img: 'uploads/vice-chancellor-dr-narsi-reddy.jpg', slot: 'lead-vc' },
+        { role: 'Director', name: 'Vamsi Chalagulla', note: 'Hari University', img: 'uploads/management-director-dummy.jpg', slot: 'lead-director' },
+      ],
+      lbOpen: !!this.state.lb,
+      lbSrc: this.state.lb ? EVENTS[this.state.lb.e].posters[this.state.lb.i] : '',
+      lbTitle: this.state.lb ? EVENTS[this.state.lb.e].title : '',
+      lbPos: this.state.lb ? `${this.state.lb.i + 1} / ${EVENTS[this.state.lb.e].posters.length}` : '',
+      lbClose: () => this.setState({ lb: null }),
+      lbPrev: () => this.step(-1), lbNext: () => this.step(1),
+      stop: (e) => e.stopPropagation(),
+      submit: this.submit,
+      errName: errors.name || '', errEmail: errors.email || '', errPhone: errors.phone || '', errProgram: errors.program || '',
+      sent: !!sent, notSent: !sent, sentName: sent ? sent.name : '', sentProgram: sent ? sent.program : '',
+      resetForm: () => this.setState({ sent: null }),
+    };
+  }
+}
+</script>
+</body>
+</html>

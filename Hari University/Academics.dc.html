@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/modernist-8aa8bd0d-091c-49d7-966f-09bf9aaebbbc/styles.css">
+<script src="_ds/modernist-8aa8bd0d-091c-49d7-966f-09bf9aaebbbc/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<link rel="icon" type="image/png" href="uploads/favicon.png">
+<title>Academics &amp; Programmes · Hari University</title>
+<style>
+:root{--color-bg:#FFFFFF;--color-surface:#F2F7FF;--color-text:#172033;--color-accent:#0066FF;--color-accent-2:#00A3FF;--color-divider:#D5DEEC;--color-accent-100:#F2F7FF;--color-accent-200:#D9E8FF;--color-accent-300:#ADCCFF;--color-accent-400:#5C9DFF;--color-accent-500:#0066FF;--color-accent-600:#0052D6;--color-accent-700:#003B95;--color-accent-800:#002C70;--color-accent-900:#001D4A;--radius-sm:6px;--radius-md:8px;--radius-lg:14px;--shadow-sm:0 1px 2px rgba(0,59,149,.08);--shadow-md:0 6px 20px rgba(0,59,149,.10);--shadow-lg:0 18px 44px rgba(0,59,149,.14)}
+html{scroll-behavior:smooth}
+body{margin:0;background:#FFFFFF;color:#172033;font-family:"Archivo",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#0066FF}a:hover{color:#003B95}
+:focus-visible{outline:2px solid #0066FF;outline-offset:2px}
+</style>
+</helmet>
+<div style="min-height:100vh;background:#FFFFFF">
+<dc-import name="SiteTopbar" hint-size="100%,72px"></dc-import>
+<dc-import name="SiteHeader" current="academics" hint-size="100%,77px" style="position:sticky;top:0;z-index:30"></dc-import>
+<main>
+<section style="background:#F2F7FF;border-bottom:1px solid #E3EAF5">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(32px,5vw,64px) clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(28px,4vw,56px);align-items:center">
+<div style="display:flex;flex-direction:column;gap:18px;align-items:flex-start">
+<nav aria-label="Breadcrumb" style="font-size:13px;color:#64748B;display:flex;gap:8px"><a href="Hari University Home.dc.html" style="color:#64748B;text-decoration:none">Home</a><span>/</span><span style="color:#172033;font-weight:600">Academics</span></nav>
+<h1 style="font-size:clamp(36px,4.6vw,60px);line-height:1.05;letter-spacing:-.03em;margin:0">Every degree earned in a living laboratory.</h1>
+<p style="font-size:clamp(16px,1.4vw,19px);line-height:1.6;color:#64748B;margin:0;max-width:560px">Four interdisciplinary Schools, eight programmes, one living campus — each School taught in concert with the others, never in isolation.</p>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<a href="#agri" style="font-size:14px;font-weight:600;padding:8px 14px;border-radius:999px;background:#FFFFFF;border:1px solid #D5DEEC;color:#172033;text-decoration:none" style-hover="border-color:#0066FF;color:#0066FF">Agricultural Sciences</a>
+<a href="#eng" style="font-size:14px;font-weight:600;padding:8px 14px;border-radius:999px;background:#FFFFFF;border:1px solid #D5DEEC;color:#172033;text-decoration:none" style-hover="border-color:#0066FF;color:#0066FF">Engineering &amp; Technology</a>
+<a href="#mgmt" style="font-size:14px;font-weight:600;padding:8px 14px;border-radius:999px;background:#FFFFFF;border:1px solid #D5DEEC;color:#172033;text-decoration:none" style-hover="border-color:#0066FF;color:#0066FF">Management</a>
+<a href="#phil" style="font-size:14px;font-weight:600;padding:8px 14px;border-radius:999px;background:#FFFFFF;border:1px solid #D5DEEC;color:#172033;text-decoration:none" style-hover="border-color:#0066FF;color:#0066FF">Philosophy &amp; Arts</a>
+</div>
+</div>
+<div style="position:relative;height:clamp(260px,30vw,400px)"><image-slot id="acad-hero" shape="rounded" radius="16" src="https://haridu.in/_next/image?url=%2Fimages%2Fds%2F20260520_AJY_1782.JPG&amp;w=1200&amp;q=75" placeholder="Academics hero image"></image-slot></div>
+</div>
+</section>
+
+<section style="max-width:1280px;margin:0 auto;padding:clamp(40px,5vw,64px) clamp(20px,4vw,48px) 0">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));border-top:2px solid #172033;border-bottom:1px solid #D5DEEC">
+<div style="padding:20px 20px 20px 0"><div style="font-size:32px;font-weight:800;color:#0066FF">4</div><div style="font-size:14px;color:#64748B">Schools</div></div>
+<div style="padding:20px 20px 20px 0"><div style="font-size:32px;font-weight:800;color:#0066FF">8</div><div style="font-size:14px;color:#64748B">Programmes</div></div>
+<div style="padding:20px 20px 20px 0"><div style="font-size:32px;font-weight:800;color:#0066FF">1</div><div style="font-size:14px;color:#64748B">Living campus</div></div>
+<div style="padding:20px 20px 20px 0"><div style="font-size:32px;font-weight:800;color:#0066FF">100%</div><div style="font-size:14px;color:#64748B">Fully residential</div></div>
+</div>
+</section>
+
+<sc-for list="{{ schools }}" as="s" hint-placeholder-count="4">
+<section id="{{ s.id }}" style="max-width:1280px;margin:0 auto;padding:clamp(48px,6vw,80px) clamp(20px,4vw,48px) 0;scroll-margin-top:90px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(28px,4vw,56px);align-items:start">
+<div style="position:relative;height:clamp(260px,28vw,380px);border-radius:16px;overflow:hidden"><image-slot id="{{ s.slot }}" shape="rect" src="{{ s.img }}" placeholder="School image"></image-slot><span style="position:absolute;left:16px;top:16px;background:#0066FF;color:#FFFFFF;font-weight:800;font-size:14px;padding:6px 12px;border-radius:6px;pointer-events:none">School {{ s.n }}</span></div>
+<div style="display:flex;flex-direction:column;gap:14px">
+<span style="font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0066FF">{{ s.kicker }}</span>
+<h2 style="font-size:clamp(28px,3vw,38px);margin:0;letter-spacing:-.02em">{{ s.title }}</h2>
+<p style="margin:0;color:#64748B;font-size:16px;line-height:1.65">{{ s.desc }}</p>
+<div style="display:flex;flex-direction:column;gap:10px;padding-top:6px">
+<sc-for list="{{ s.programs }}" as="p" hint-placeholder-count="2">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px;border:1px solid #D9E8FF;background:#F2F7FF;border-radius:10px"><span style="font-weight:800;font-size:16px;color:#003B95">{{ p.name }}</span><span style="font-size:13px;color:#64748B;white-space:nowrap">{{ p.dur }}</span></div>
+</sc-for>
+</div>
+<h3 style="font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#64748B;margin:10px 0 0">Focus areas</h3>
+<ul style="margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:8px 20px">
+<sc-for list="{{ s.focus }}" as="f" hint-placeholder-count="4">
+<li style="display:flex;gap:8px;font-size:14px;line-height:1.5"><svg width="16" height="16" viewBox="0 0 24 24" style="fill:none;stroke:#0066FF;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;flex:none;margin-top:2px"><path d="M20 6 9 17l-5-5"></path></svg>{{ f }}</li>
+</sc-for>
+</ul>
+<div style="display:flex;flex-wrap:wrap;gap:12px;padding-top:8px"><a href="Admissions.dc.html#apply" class="btn btn-primary" style="padding:12px 18px;border-radius:8px">Apply Now</a><a href="Contact.dc.html#enquiry" class="btn btn-secondary" style="padding:12px 18px;border-radius:8px;border-color:#0066FF;color:#0066FF">Programme Enquiry</a></div>
+</div>
+</div>
+</section>
+</sc-for>
+
+<section style="margin-top:clamp(56px,7vw,96px);background:#F2F7FF">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,88px) clamp(20px,4vw,48px)">
+<span style="font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#0066FF">Interdisciplinary by design</span>
+<h2 style="font-size:clamp(30px,3.4vw,44px);margin:10px 0 28px;letter-spacing:-.025em">The HARI Engineering Advantage</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px">
+<sc-for list="{{ advantage }}" as="a" hint-placeholder-count="4">
+<div style="background:#FFFFFF;border-radius:14px;padding:26px;display:flex;flex-direction:column;gap:10px;border-top:3px solid #0066FF"><h3 style="font-size:19px;margin:0">{{ a.title }}</h3><p style="margin:0;font-size:14px;line-height:1.6;color:#64748B">{{ a.desc }}</p></div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section style="max-width:1280px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,48px)">
+<span style="font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#0066FF">At a glance</span>
+<h2 style="font-size:clamp(30px,3.4vw,44px);margin:10px 0 24px;letter-spacing:-.025em">All programmes</h2>
+<div style="overflow-x:auto;border:1px solid #E3EAF5;border-radius:14px">
+<table class="table" style="min-width:620px;font-size:15px">
+<thead><tr><th style="padding:14px 18px;background:#F2F7FF">Programme</th><th style="padding:14px 18px;background:#F2F7FF">School</th><th style="padding:14px 18px;background:#F2F7FF">Duration</th><th style="padding:14px 18px;background:#F2F7FF">Mode</th></tr></thead>
+<tbody>
+<sc-for list="{{ allPrograms }}" as="p" hint-placeholder-count="8">
+<tr><td style="padding:14px 18px;font-weight:700">{{ p.name }}</td><td style="padding:14px 18px;color:#64748B">{{ p.school }}</td><td style="padding:14px 18px">{{ p.dur }}</td><td style="padding:14px 18px"><span style="font-size:12px;font-weight:700;color:#003B95;background:#F2F7FF;padding:3px 8px;border-radius:4px">Residential</span></td></tr>
+</sc-for>
+</tbody>
+</table>
+</div>
+</section>
+</main>
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const IMG = n => `https://haridu.in/_next/image?url=%2Fimages%2Fds%2F${encodeURIComponent(n)}&w=1200&q=75`;
+const SCHOOLS = [
+  { id: 'agri', n: '01', kicker: 'Flagship school · Admissions open AY 2026–27', title: 'School of Agricultural Sciences', img: IMG('research-tissue-culture.jpg'),
+    desc: 'Hari University teaches the Evergreen Revolution: regenerative methods that restore soil health, cut water dependency and produce food that is nutritious and ecologically sustainable — demonstrated on the campus itself over fifteen years.',
+    programs: [{ name: 'B.Sc. (Hons) Agriculture', dur: '4 years' }, { name: 'B.Sc. (Hons) Horticulture', dur: '4 years' }],
+    focus: ['Drought-resistant, high-productivity crop genomics', 'Biochar and carbon sequestration in soils', 'IoT and AI in precision and smart farming', 'Tissue culture, Mega and Exotic Nursery systems'] },
+  { id: 'eng', n: '02', kicker: 'Four CSE specialisations · Admissions open AY 2026–27', title: 'School of Engineering & Technology', img: IMG('20260520_AJY_1835.JPG'),
+    desc: 'Engineering is never taught in isolation. Every programme is built on the principle that technology serves people and the planet — students work alongside peers from Agriculture, Management and Philosophy from Day 1.',
+    programs: [{ name: 'B.Tech Computer Science', dur: '4 years' }, { name: 'B.Tech CS (Artificial Intelligence)', dur: '4 years' }, { name: 'B.Tech CS (Data Science)', dur: '4 years' }, { name: 'B.Tech CS (Cyber Security)', dur: '4 years' }],
+    focus: ['Software engineering and systems design', 'Ethical AI, machine learning and deep learning', 'Applied analytics on live campus data', 'Network security, cryptography and digital governance'] },
+  { id: 'mgmt', n: '03', kicker: 'Conscious capitalism · Heartful leadership', title: 'School of Management & Entrepreneurship', img: IMG('auditorium-cultural-event.jpg'),
+    desc: 'The most effective leaders of the coming decades will balance performance with purpose, profit with planet and strategy with empathy. The BBA draws from Agriculture, Technology, Philosophy and the Heartfulness leadership frameworks.',
+    programs: [{ name: 'BBA in Management', dur: '3 years' }],
+    focus: ['Heartful Leadership', 'Conscious Capitalism', 'Live case studies from the campus regeneration model', 'ESG and sustainability strategy'] },
+  { id: 'phil', n: '04', kicker: 'Anchored by the Chair for Tirthankar Bhagwan Rishabhdev', title: 'School of Philosophy & Arts', img: IMG('20190429_LAL_5393.jpg'),
+    desc: "Philosophy is a cornerstone, not a peripheral subject. The School approaches India's ancient wisdom traditions with full academic rigour — in living dialogue with science and technology research across the campus.",
+    programs: [{ name: 'MA Philosophy', dur: '2 years' }],
+    focus: ['Vedanta, Jain philosophy, Samkhya', 'Philosophy of Consciousness', 'Ethics in Technology & Leadership', 'Philosophy of Ecology'] },
+].map(s => ({ ...s, slot: 'acad-' + s.id }));
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      schools: SCHOOLS,
+      allPrograms: SCHOOLS.flatMap(s => s.programs.map(p => ({ ...p, school: s.title.replace('School of ', '') }))),
+      advantage: [
+        { title: 'AI meets Agriculture', desc: 'AI-Powered Smart Farms — Engineering and Agriculture students co-own these platforms from the ground up.' },
+        { title: 'Code meets Conscience', desc: 'Ethics is a credit-bearing core subject in every B.Tech programme.' },
+        { title: 'Data meets Ecology', desc: 'Live ecological datasets from the campus give Data Science students real research material.' },
+        { title: 'Technology meets Tradition', desc: 'Exposure to Vedic Mathematics and its relevance to modern cryptography and algorithm design.' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

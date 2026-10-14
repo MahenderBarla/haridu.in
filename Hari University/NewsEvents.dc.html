@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/modernist-8aa8bd0d-091c-49d7-966f-09bf9aaebbbc/styles.css">
+<script src="_ds/modernist-8aa8bd0d-091c-49d7-966f-09bf9aaebbbc/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<link rel="icon" type="image/png" href="uploads/favicon.png">
+<title>News &amp; Events · Hari University</title>
+<style>
+:root{--color-bg:#FFFFFF;--color-surface:#F2F7FF;--color-text:#172033;--color-accent:#0066FF;--color-accent-2:#00A3FF;--color-divider:#D5DEEC;--color-accent-100:#F2F7FF;--color-accent-200:#D9E8FF;--color-accent-300:#ADCCFF;--color-accent-400:#5C9DFF;--color-accent-500:#0066FF;--color-accent-600:#0052D6;--color-accent-700:#003B95;--color-accent-800:#002C70;--color-accent-900:#001D4A;--radius-sm:6px;--radius-md:8px;--radius-lg:14px;--shadow-sm:0 1px 2px rgba(0,59,149,.08);--shadow-md:0 6px 20px rgba(0,59,149,.10);--shadow-lg:0 18px 44px rgba(0,59,149,.14)}
+html{scroll-behavior:smooth}
+body{margin:0;background:#FFFFFF;color:#172033;font-family:"Archivo",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#0066FF}a:hover{color:#003B95}
+:focus-visible{outline:2px solid #0066FF;outline-offset:2px}
+</style>
+</helmet>
+<div style="min-height:100vh;background:#FFFFFF">
+<dc-import name="SiteTopbar" hint-size="100%,72px"></dc-import>
+<dc-import name="SiteHeader" current="news" hint-size="100%,77px" style="position:sticky;top:0;z-index:30"></dc-import>
+<main>
+<section style="background:#F2F7FF;border-bottom:1px solid #E3EAF5">
+<div style="max-width:1280px;margin:0 auto;padding:clamp(32px,5vw,56px) clamp(20px,4vw,48px);display:flex;flex-direction:column;gap:16px">
+<nav aria-label="Breadcrumb" style="font-size:13px;color:#64748B;display:flex;gap:8px"><a href="Hari University Home.dc.html" style="color:#64748B;text-decoration:none">Home</a><span>/</span><span style="color:#172033;font-weight:600">News &amp; Events</span></nav>
+<h1 style="font-size:clamp(36px,4.6vw,60px);line-height:1.05;letter-spacing:-.03em;margin:0">News &amp; Events</h1>
+<p style="font-size:clamp(16px,1.4vw,19px);line-height:1.6;color:#64748B;margin:0;max-width:640px">Merit awards, campus events, admissions updates and research from Hari University.</p>
+<div role="tablist" aria-label="Filter" style="display:flex;flex-wrap:wrap;gap:8px;padding-top:6px">
+<sc-for list="{{ tabs }}" as="t" hint-placeholder-count="4">
+<button type="button" role="tab" aria-selected="{{ t.active }}" onClick="{{ t.select }}" style="font:inherit;font-size:14px;font-weight:600;padding:9px 16px;border-radius:999px;cursor:pointer;border:1px solid {{ t.border }};background:{{ t.bg }};color:{{ t.fg }}">{{ t.label }}</button>
+</sc-for>
+</div>
+</div>
+</section>
+
+<sc-if value="{{ showFeatured }}" hint-placeholder-val="{{ true }}">
+<section style="max-width:1280px;margin:0 auto;padding:clamp(40px,5vw,64px) clamp(20px,4vw,48px) 0">
+<article style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));border:2px solid #0066FF;border-radius:18px;overflow:hidden;background:#FFFFFF">
+<button type="button" onClick="{{ openFeatured }}" aria-label="Open HARI Udaan Vijayawada posters" style="all:unset;cursor:zoom-in;position:relative;min-height:380px;display:block;background:#001D4A"><img src="uploads/hari-udaan-vijayawada-main.png" alt="HARI Udaan 2026 Vijayawada poster" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top"></button>
+<div style="padding:clamp(28px,4vw,48px);display:flex;flex-direction:column;gap:14px;align-items:flex-start">
+<div style="display:flex;gap:8px;flex-wrap:wrap"><span style="font-size:12px;font-weight:800;color:#FFFFFF;background:#0066FF;padding:4px 10px;border-radius:4px">Featured</span><span style="font-size:12px;font-weight:800;color:#003B95;background:#F2F7FF;padding:4px 10px;border-radius:4px">Merit Awards</span></div>
+<h2 style="font-size:clamp(28px,3vw,40px);margin:0;letter-spacing:-.025em">HARI Udaan 2026 — Andhra Pradesh Merit Excellence Awards</h2>
+<p style="margin:0;color:#64748B;font-size:16px;line-height:1.6">Recognising Andhra Pradesh's brightest Intermediate achievers with Gold, Silver and Bronze honours, Certificates of Excellence, professional stage felicitation, media coverage and special scholarship consideration.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;width:100%;font-size:14px">
+<div style="background:#F2F7FF;border-radius:10px;padding:14px"><div style="font-weight:800">06 Aug 2026 · Thursday</div><div style="color:#64748B">Sree Srinivas Conventions, Tadepalli, Vijayawada</div></div>
+<div style="background:#F2F7FF;border-radius:10px;padding:14px"><div style="font-weight:800">05 Jul 2026</div><div style="color:#64748B">Shri Ram Chandra Mission, Ganesh Nagar, Kurnool</div></div>
+</div>
+<button type="button" onClick="{{ openFeatured }}" class="btn btn-primary" style="padding:13px 20px;border-radius:8px">View posters</button>
+</div>
+</article>
+</section>
+</sc-if>
+
+<section style="max-width:1280px;margin:0 auto;padding:clamp(40px,5vw,64px) clamp(20px,4vw,48px) clamp(56px,7vw,96px)">
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:20px">
+<sc-for list="{{ items }}" as="n" hint-placeholder-count="6">
+<article style="display:flex;flex-direction:column;border:1px solid #E3EAF5;border-radius:14px;overflow:hidden;background:#FFFFFF;transition:box-shadow .2s" style-hover="box-shadow:0 16px 36px rgba(0,59,149,.12)">
+<sc-if value="{{ n.isPoster }}" hint-placeholder-val="{{ false }}">
+<button type="button" onClick="{{ n.open }}" aria-label="{{ n.aria }}" style="all:unset;cursor:zoom-in;position:relative;display:block;height:320px;background:#F2F7FF;overflow:hidden"><img src="{{ n.img }}" alt="{{ n.title }}" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block"><span style="position:absolute;right:12px;bottom:12px;background:#FFFFFF;color:#003B95;font-size:12px;font-weight:700;padding:6px 10px;border-radius:6px">{{ n.count }}</span></button>
+</sc-if>
+<sc-if value="{{ n.isPhoto }}" hint-placeholder-val="{{ true }}">
+<div style="height:200px;position:relative;overflow:hidden"><div style="position:absolute;inset:0;transition:transform .6s ease" style-hover="transform:scale(1.07)"><image-slot id="{{ n.slot }}" shape="rect" src="{{ n.img }}" placeholder="News image"></image-slot></div></div>
+</sc-if>
+<div style="padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1">
+<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:12px"><span style="font-weight:800;color:#003B95;background:#F2F7FF;padding:3px 8px;border-radius:4px">{{ n.cat }}</span><span style="font-weight:700;color:#172033">{{ n.date }}</span></div>
+<h3 style="font-size:18px;line-height:1.3;margin:0">{{ n.title }}</h3>
+<p style="margin:0;font-size:14px;line-height:1.55;color:#64748B;flex:1">{{ n.excerpt }}</p>
+<span style="font-size:13px;color:#64748B;padding-top:8px;border-top:1px solid #EEF2F8">{{ n.venue }}</span>
+<a href="{{ n.href }}" onClick="{{ n.open }}" style="font-size:14px;font-weight:700;text-decoration:none">Read More →</a>
+</div>
+</article>
+</sc-for>
+</div>
+</section>
+
+<sc-if value="{{ lbOpen }}" hint-placeholder-val="{{ false }}">
+<div role="dialog" aria-modal="true" aria-label="{{ lbTitle }}" onClick="{{ lbClose }}" style="position:fixed;inset:0;z-index:100;background:rgba(0,29,74,.88);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:20px">
+<img src="{{ lbSrc }}" alt="{{ lbTitle }}" onClick="{{ stop }}" style="max-width:min(92vw,900px);max-height:78vh;object-fit:contain;border-radius:10px;background:#FFFFFF">
+<div onClick="{{ stop }}" style="display:flex;align-items:center;gap:14px;color:#FFFFFF;font-size:14px;flex-wrap:wrap;justify-content:center">
+<button type="button" onClick="{{ lbPrev }}" aria-label="Previous poster" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:transparent;color:#FFFFFF;cursor:pointer;font-size:18px">‹</button>
+<span><strong>{{ lbTitle }}</strong> · {{ lbPos }}</span>
+<button type="button" onClick="{{ lbNext }}" aria-label="Next poster" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:transparent;color:#FFFFFF;cursor:pointer;font-size:18px">›</button>
+<button type="button" onClick="{{ lbClose }}" style="height:44px;padding:0 16px;border-radius:8px;border:0;background:#FFFFFF;color:#003B95;font-weight:700;cursor:pointer">Close</button>
+</div>
+</div>
+</sc-if>
+</main>
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const IMG = n => `https://haridu.in/_next/image?url=%2Fimages%2Fds%2F${encodeURIComponent(n)}&w=1200&q=75`;
+const POSTERS = [
+  { title: 'HARI Udaan 2026 — Vijayawada', list: ['uploads/hari-udaan-vijayawada-main.png', 'uploads/hari-udaan-vijayawada-awards.png', 'uploads/hari-udaan-vijayawada-details.png', 'uploads/hari-udaan-vijayawada-campus.png'] },
+  { title: 'Orientation Day 2026', list: ['uploads/hari-orientation-day-2026.jpeg'] },
+  { title: 'HARI Udaan 2026 — Kurnool', list: ['uploads/hari-udaan-2026.jpeg', 'uploads/hari-udaan-2026-details.jpeg'] },
+];
+const ITEMS = [
+  { type: 'events', cat: 'Merit Awards', date: '06 Aug 2026', title: 'HARI Udaan 2026 — Vijayawada', excerpt: 'Gold (95–100%), Silver (90–94.99%) and Bronze (85–89.99%) honours for Intermediate achievers.', venue: 'Sree Srinivas Conventions, Tadepalli, Vijayawada', poster: 0 },
+  { type: 'events', cat: 'Campus Event', date: '17 Aug 2026 · 9:00 AM', title: 'Orientation Day 2026', excerpt: 'Newly admitted students and families welcomed by Chief Guest Shri Kamlesh D. Patel (Daaji), Chancellor.', venue: 'Kanha Shanti Vanam, Hyderabad', poster: 1 },
+  { type: 'events', cat: 'Merit Awards', date: '05 Jul 2026', title: 'HARI Udaan 2026 — Kurnool', excerpt: 'Felicitating Intermediate toppers with 95% and above — gold medals, certificates and merit-based scholarships.', venue: 'Shri Ram Chandra Mission, Ganesh Nagar, Kurnool', poster: 2 },
+  { type: 'news', cat: 'Admissions', date: 'AY 2026–27', title: 'Admissions open across all four Schools', excerpt: 'Applications are open for B.Tech, B.Sc. (Hons), BBA and MA Philosophy.', venue: 'Admissions Office', img: IMG('20260520_AJY_1835.JPG'), href: 'Admissions.dc.html' },
+  { type: 'research', cat: 'Research', date: '2026', title: 'EEG alpha modulation across meditation experience levels', excerpt: 'A cross-sectional EEG study of Heartfulness meditation.', venue: 'Annals of Neurosciences', img: IMG('gardens-meditation-grove.jpg'), href: 'https://doi.org/10.1177/09727531251400095' },
+  { type: 'research', cat: 'Research', date: '2026', title: 'Conserving Ficus species at Kanha Shanti Vanam', excerpt: 'Field documentation of keystone fig species on campus.', venue: 'Phytology', img: IMG('campus-gardens-aerial.jpg'), href: 'https://doi.org/10.64171/IJPR.2026.6.1.5-9' },
+  { type: 'research', cat: 'Research', date: '2025', title: 'Heartfulness meditation, stress biomarkers and burnout', excerpt: 'A randomised controlled study on stress, burnout and well-being.', venue: 'Stress and Health', img: IMG('research-lab-detail.jpg'), href: 'https://doi.org/10.1002/smi.70034' },
+];
+const TABS = [['all', 'All'], ['events', 'Events'], ['news', 'Admissions'], ['research', 'Research']];
+class Component extends DCLogic {
+  state = { filter: 'all', lb: null };
+  step = d => this.setState(s => s.lb ? { lb: { p: s.lb.p, i: (s.lb.i + d + POSTERS[s.lb.p].list.length) % POSTERS[s.lb.p].list.length } } : null);
+  componentDidMount() { this.k = e => { if (!this.state.lb) return; if (e.key === 'Escape') this.setState({ lb: null }); if (e.key === 'ArrowRight') this.step(1); if (e.key === 'ArrowLeft') this.step(-1); }; window.addEventListener('keydown', this.k); }
+  componentWillUnmount() { window.removeEventListener('keydown', this.k); }
+  renderVals() {
+    const { filter, lb } = this.state;
+    const open = p => e => { e && e.preventDefault(); this.setState({ lb: { p, i: 0 } }); };
+    return {
+      tabs: TABS.map(([id, label]) => { const a = filter === id; return { label, active: a, bg: a ? '#0066FF' : '#FFFFFF', fg: a ? '#FFFFFF' : '#172033', border: a ? '#0066FF' : '#D5DEEC', select: () => this.setState({ filter: id }) }; }),
+      showFeatured: filter === 'all' || filter === 'events',
+      openFeatured: open(0),
+      items: ITEMS.filter(n => filter === 'all' || n.type === filter).map((n, i) => {
+        const isPoster = n.poster != null;
+        return { ...n, isPoster, isPhoto: !isPoster, slot: 'newsp-' + i, img: isPoster ? POSTERS[n.poster].list[0] : n.img,
+          count: isPoster ? (POSTERS[n.poster].list.length > 1 ? `View ${POSTERS[n.poster].list.length} posters` : 'View poster') : '',
+          aria: `Open ${n.title} poster`, href: isPoster ? '#' : n.href, open: isPoster ? open(n.poster) : undefined };
+      }),
+      lbOpen: !!lb, lbSrc: lb ? POSTERS[lb.p].list[lb.i] : '', lbTitle: lb ? POSTERS[lb.p].title : '', lbPos: lb ? `${lb.i + 1} / ${POSTERS[lb.p].list.length}` : '',
+      lbClose: () => this.setState({ lb: null }), lbPrev: () => this.step(-1), lbNext: () => this.step(1), stop: e => e.stopPropagation(),
+    };
+  }
+}
+</script>
+</body>
+</html>
